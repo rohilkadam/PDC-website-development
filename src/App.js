@@ -12,6 +12,8 @@ import { Route,Routes } from 'react-router';
 import Navbar from './components/Navbar/Navbar';
 import About from './components/About/About';
 import ContactUs from './components/Contact Us/ContactUs';
+import Footer from './components/Footer/Footer';
+import Home from './components/Home/Home';
 
 function App() {
 
@@ -28,7 +30,7 @@ function App() {
     
 
     <Routes>
-    <Route path="/" element="{}" />
+    <Route path="/" element={<Home />} />
     <Route path="/about" element={<About />} />
     <Route path="/services" element="{} "  />
     <Route path="/contact" element={<ContactUs/>}  />
