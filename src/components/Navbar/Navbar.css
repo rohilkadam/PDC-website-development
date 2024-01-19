@@ -3,7 +3,7 @@
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: #fff;
+  background: blue;
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -55,7 +55,7 @@
 # Header
 --------------------------------------------------------------*/
 #header {
-  background: #fff;
+  background: red;
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
@@ -73,6 +73,7 @@
   padding: 0;
   line-height: 1;
   font-weight: 700;
+  background-color: green;
   letter-spacing: 0.5px;
   font-family: "Poppins", sans-serif;
 }
@@ -118,10 +119,36 @@
 /**
 * Desktop Navigation 
 */
-.navbar {
+.navbar{
   padding: 0;
 }
+/*Heading */
+.heading
+{
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center; /* Centers items vertically */
+  justify-content: center;
+  height: 130px;
+  position: relative;
+}
 
+.gap
+{ 
+  background-color:white;
+  color:red;
+  display: flex;
+  align-items: center; /* Centers items vertically */
+  justify-content: center;
+  height: 30px;
+  position: relative;
+}
+.gap h2
+{
+  font-size: 20px;
+  font-weight: bold;
+}
 .navbar ul {
   margin: 0;
   padding: 0;

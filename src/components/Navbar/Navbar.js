@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import "./Navbar.css";
 import navbarItems from "./NavbarItems";
 import { Link, useLocation } from 'react-router-dom';
@@ -49,10 +49,17 @@ const Navbar = ({ toggle }) => {
       </div>
 
       <header id="header" className={`fixed-top ${scrolled ? "header-scrolled" : ""}`}>
+      <div className="heading  align-items-center">
+        <img  src="image.jpg" alt="pdc logo"></img>
+        <h1> POONA DIABETES CENTRE</h1>
+      </div>  
+      <div className="gap align-itmes-center">
+        <h2>NABH ACCREDITED etc etc </h2>
+        </div>
         <div className="container d-flex align-items-center">
           <h1 className="logo me-auto"><Link to="index.html">PDC</Link></h1>
-
           <nav id="navbar" className="navbar order-last order-lg-0">
+          
             <ul>
               {navbarItems.map((item, index) => (
                 <li key={index}>
@@ -71,7 +78,6 @@ const Navbar = ({ toggle }) => {
             </div>
             
           </nav>
-
           <Link to="#appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span> Appointment</Link>
         </div>
       </header>
