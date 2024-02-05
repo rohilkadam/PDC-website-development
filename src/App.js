@@ -1,9 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import $ from 'jquery'; 
+
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 import 'bootstrap/dist/js/bootstrap.bundle.min';
-import $ from 'jquery'; 
+import 'bootstrap/dist/js/bootstrap'
+
 import Popper from 'popper.js'; 
+
 
 
 
@@ -14,27 +17,25 @@ import About from './components/About/About';
 import ContactUs from './components/Contact Us/ContactUs';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
+import HealthPackage from './components/HealthPackages/HealthPackage';
 
 function App() {
 
-  const [isopen, setisopen] = useState(false);
-  const toggle = () => {
-    console.log(isopen);
-    setisopen(!isopen);
-  };
 
 
   return (
     <>
-    <Navbar toggle={toggle} />
+    <Navbar  />
     
 
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/about" element={<About />} />
-    <Route path="/services" element="{} "  />
+    <Route path="/healthPackages" element={<HealthPackage />}  />
     <Route path="/contact" element={<ContactUs/>}  />
     </Routes>
+
+    <Footer />
     </>
   );
 }

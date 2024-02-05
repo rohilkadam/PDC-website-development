@@ -1,15 +1,16 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Navbar.css";
-import navbarItems from "./NavbarItems";
+import navbarItems from "../../Data/NavbarItems";
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars,  FaEnvelope, FaFacebook, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa";
-import {FaXmark} from "react-icons/fa6";
+import { FaBars, FaEnvelope, FaFacebook, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa";
+import { FaXmark } from "react-icons/fa6";
 
-const Navbar = ({ toggle }) => {
+const Navbar = () => {
   const location = useLocation();
+  console.log(location.pathname);
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
- 
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
@@ -29,37 +30,49 @@ const Navbar = ({ toggle }) => {
   const handleMobileNavToggle = () => {
     const navbar = document.getElementById('navbar');
     navbar.classList.toggle('navbar-mobile');
-   setIsMobile(navbar.classList.contains('navbar-mobile') );
+    setIsMobile(navbar.classList.contains('navbar-mobile'));
   };
 
   return (
     <>
-      <div id="topbar" className={`d-flex align-items-center ${scrolled ? "topbar-scrolled" : ""} fixed-top`}>
-        <div className="container d-flex justify-content-between">
+      <div id="topbar" className={` ${scrolled ? "topbar-scrolled" : ""} fixed-top`}>
+        <div className="container d-flex justify-content-between p-2">
+
+
           <div className="contact-info d-flex align-items-center">
-            <FaEnvelope /> <Link href="mailto:contact@example.com">pdc@gmail.com</Link>
-            <FaPhone /> +1 5589 55488 55
+            <FaEnvelope /> <Link href="mailto:pdc@gmail.com">pdc@gmail.com</Link>
+            <FaPhone /> <Link>+1 5589 55488 55</Link>
           </div>
           <div className="d-none d-lg-flex social-links align-items-center">
             <Link href="#" className="twitter"><FaTwitter /></Link>
             <Link href="#" className="facebook"><FaFacebook /></Link>
-            <Link href="#" className="instagram"><FaInstagram/></Link>
+            <Link href="#" className="instagram"><FaInstagram /></Link>
           </div>
+        </div>
+        {/* Logo and Center Name */}
+        <div className="logo-container row">
+          <div className="col-md-4 col-sm-12 text-end">
+            <img src="images/logo.png" alt="Poona Diabetic Centre Logo" className="img-fluid" />
+          </div>
+          <div className="col-md-6 col-sm-12 row-flex fw-bold">
+          <div class="large-font text-center pt-1 fs-1">POONA DIABETES CENTRE</div>
+          <div class="small-font text-center text-red ">NO-1 DIABETES SPECIALITY CENTRE IN PUNE | NBA A+ ACCREDIATED</div>
+          </div>
+
+
         </div>
       </div>
 
-      <header id="header" className={`fixed-top ${scrolled ? "header-scrolled" : ""}`}>
-      <div className="heading  align-items-center">
-        <img  src="image.jpg" alt="pdc logo"></img>
-        <h1> POONA DIABETES CENTRE</h1>
-      </div>  
-      <div className="gap align-itmes-center">
-        <h2>NABH ACCREDITED etc etc </h2>
-        </div>
+
+
+      <header id="header" className={`shadow fixed-top ${scrolled ? "header-scrolled" : ""}`}>
+
         <div className="container d-flex align-items-center">
-          <h1 className="logo me-auto"><Link to="index.html">PDC</Link></h1>
+          {/*
+          <h1 className="logo me-auto"><img className="img-fluid" src='images/logo.png'  /> <Link to="index.html">PDC</Link></h1>
+  */}
           <nav id="navbar" className="navbar order-last order-lg-0">
-          
+
             <ul>
               {navbarItems.map((item, index) => (
                 <li key={index}>
@@ -74,11 +87,11 @@ const Navbar = ({ toggle }) => {
             </ul>
 
             <div className="mobile-nav-toggle" onClick={handleMobileNavToggle}>
-                {isMobile ? <FaXmark  className="close" /> : <FaBars  />}
+              {isMobile ? <FaXmark className="close" /> : <FaBars />}
             </div>
-            
+
           </nav>
-          <Link to="#appointment" className="appointment-btn scrollto"><span className="d-none d-md-inline">Make an</span> Appointment</Link>
+          <Link to="#appointment" className="appointment-btn scrollto ms-auto float-end">Make an Appointment</Link>
         </div>
       </header>
     </>

@@ -1,64 +1,68 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import { FaAngleLeft , FaAngleRight } from "react-icons/fa";
 
 const Banner = () => {
+  useEffect(() => {
+    const heroCarouselIndicators = document.getElementById("hero-carousel-indicators");
+    const heroCarouselItems = document.querySelectorAll('#heroCarousel .carousel-item');
+
+    heroCarouselItems.forEach((item, index) => {
+      heroCarouselIndicators.innerHTML += `<li data-bs-target='#heroCarousel' data-bs-slide-to='${index}' ${index === 0 ? 'class="active"' : ''}></li>`;
+    });
+  }, []);
+
   return (
+
     <>
-    <section id="hero" class="d-flex align-items-center">
-    <div class="container">
-      <h1>Welcome to Poona Diabetic Centre</h1>
-      <h2>No 1 Diabetes Centre in Pune</h2>
-      <a href="#about" class="btn-get-started scrollto">Book Appointment</a>
-    </div>
-  </section>
+      <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
 
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
 
-    <section id="why-us" class="why-us">
-      <div class="container">
+      <div class="carousel-inner" role="listbox">
 
-        <div class="row">
-          <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="content">
-              <h3>Why Choose Medilab?</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-              </p>
-              <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-              </div>
-            </div>
+        
+        <div class="carousel-item active" style={{backgroundImage: "url(images/hero1.jpg)"}}>
+          <div class="container w-75">
+            <h2>Welcome to <span>PDC</span></h2>
+            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
           </div>
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+        </div>
+
+       
+        <div class="carousel-item" style={{backgroundImage: "url(images/hero.jpg)"}}>
+          <div class="container w-75">
+            <h2>Lorem Ipsum Dolor</h2>
+            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
+          </div>
+        </div>
+
+        
+        <div class="carousel-item" style={{backgroundImage: "url(images/hero2.jpeg)"}}>
+          <div class="container w-75">
+            <h2>Sequi ea ut et est quaerat</h2>
+            <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel.</p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
           </div>
         </div>
 
       </div>
-    </section>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"> <FaAngleLeft /> </span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon " aria-hidden="true"> <FaAngleRight /> </span>
+      </a>
+
+    </div>
+  </section>
+
+
+
 
     </>
   )

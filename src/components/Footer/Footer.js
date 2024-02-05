@@ -14,7 +14,10 @@ const Footer = () => {
 
           <div class="col-lg-4 col-md-6">
             <div class="footer-info">
-              <h3>Medicio</h3>
+              <div className='logo ms-5 mb-3'>
+              <img src='images/logo.png' className='img-fluid ' />
+              </div>
+              <h3>Poona Diabetic Centre</h3>
               <p>
                 
               </p>

@@ -1,31 +1,39 @@
+.logo-container img{
+  height: 94px;
+  width: 94px;
+  margin: 3px;
+}
+.logo-container{
+  background: #fff;
+}
 
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-  background: blue;
-  height: 40px;
+  background: red;
+  height: 135px;
   font-size: 14px;
   transition: all 0.5s;
   z-index: 996;
 }
 
 #topbar.topbar-scrolled {
-  top: -40px;
+  top: -135px;
 }
 
 #topbar .contact-info a {
   line-height: 1;
-  color: #444444;
+  color: #fff;
   transition: 0.3s;
 }
 
 #topbar .contact-info a:hover {
-  color: #b61a1a;
+  color: #fff;
 }
 
 #topbar .contact-info svg {
-  color: var(--red);
+  color: #fff;
   padding-right: 4px;
   margin-left: 15px;
   line-height: 0;
@@ -36,7 +44,7 @@
 }
 
 #topbar .social-links a {
-  color: var(--dark-red);
+  color: #fff;
   padding-left: 15px;
   display: inline-block;
   line-height: 1px;
@@ -44,7 +52,7 @@
 }
 
 #topbar .social-links a:hover {
-  color: var(--red);
+  color: #fff;
 }
 
 #topbar .social-links a:first-child {
@@ -58,8 +66,8 @@
   background: red;
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
-  top: 40px;
+  padding: 10px 0;
+  top: 135px;
   box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
 }
 
@@ -73,40 +81,51 @@
   padding: 0;
   line-height: 1;
   font-weight: 700;
-  background-color: green;
   letter-spacing: 0.5px;
-  font-family: "Poppins", sans-serif;
 }
 
 #header .logo a {
-  color: var(--red);
+  color: #fff;
 }
 
 #header .logo img {
-  max-height: 40px;
+  max-height: 60px;
+  max-width: 50px;
 }
 
 /**
 * Appointment Button *
 */
 .appointment-btn {
-  margin-left: 25px;
-  background: var(--red);
-  color: #fff;
+  background: #fff;
+  color: red;
   border-radius: 50px;
   padding: 8px 25px;
   white-space: nowrap;
   transition: 0.3s;
   font-size: 14px;
   display: inline-block;
+  font-weight: bold;
 }
 
 .appointment-btn:hover {
-  background: var(--dark-red);
+  background: #2c4964;
   color: #fff;
 }
 
 @media (max-width: 768px) {
+  #topbar{
+    height: 160px;
+  }
+  #topbar.topbar-scrolled{
+    top:-200px
+  }
+  #header{
+    top : -160px
+  }
+  .logo-container div{
+    text-align: center !important;
+  }
   .appointment-btn {
     margin: 0 15px 0 0;
     padding: 6px 18px;
@@ -119,36 +138,10 @@
 /**
 * Desktop Navigation 
 */
-.navbar{
+.navbar {
   padding: 0;
 }
-/*Heading */
-.heading
-{
-  background-color: red;
-  color: white;
-  display: flex;
-  align-items: center; /* Centers items vertically */
-  justify-content: center;
-  height: 130px;
-  position: relative;
-}
 
-.gap
-{ 
-  background-color:white;
-  color:red;
-  display: flex;
-  align-items: center; /* Centers items vertically */
-  justify-content: center;
-  height: 30px;
-  position: relative;
-}
-.gap h2
-{
-  font-size: 20px;
-  font-weight: bold;
-}
 .navbar ul {
   margin: 0;
   padding: 0;
@@ -164,7 +157,7 @@
 .navbar>ul>li {
   position: relative;
   white-space: nowrap;
-  padding: 8px 0 8px 20px;
+  padding: 8px 0 8px 40px;
 }
 
 .navbar a,
@@ -172,13 +165,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 14px;
-  color: #2c4964;
+  color: #fff;
   white-space: nowrap;
   transition: 0.3s;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid red;
   padding: 5px 2px;
-  font-weight: 400;
+  font-weight: bold;
   font-size: 16px;
 }
 
@@ -193,8 +185,8 @@
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-  color: var(--red);
-  border-color: var(--red);
+  color: #2c4964;
+  border-color: #fff;
 }
 
 .navbar .dropdown ul {
@@ -232,7 +224,7 @@
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover>a {
-  color: var(--red);
+  color: #fff;
 }
 
 .navbar .dropdown:hover>ul {
@@ -335,7 +327,7 @@
 .navbar-mobile a:hover,
 .navbar-mobile .active,
 .navbar-mobile li:hover>a {
-  color: var(--red);
+  color: #fff;
 }
 
 .navbar-mobile .getstarted,
@@ -370,7 +362,7 @@
 .navbar-mobile .dropdown ul a:hover,
 .navbar-mobile .dropdown ul .active:hover,
 .navbar-mobile .dropdown ul li:hover>a {
-  color: var(--red);
+  color: #fff;
 }
 
 .navbar-mobile .dropdown>.dropdown-active {
