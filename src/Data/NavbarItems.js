@@ -12,6 +12,10 @@ const navbarItems = [
       link: "/services",
     },
     {
+      title: "Blogs",
+      link: "/blog",
+    },
+    {
       title:"Health Packages",
       link:"/healthPackages"
     },
