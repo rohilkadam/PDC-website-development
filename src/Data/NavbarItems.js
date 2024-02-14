@@ -21,7 +21,7 @@ const navbarItems = [
     },
     {
       title:"Contact Us",
-      link:"/contactus"
+      link:"/contact"
     },
     
   ];

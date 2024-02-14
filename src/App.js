@@ -18,6 +18,8 @@ import ContactUs from './components/Contact Us/ContactUs';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import HealthPackage from './components/HealthPackages/HealthPackage';
+import BookAppointment from './components/Book_Appointment/BookAppointment';
+import Blog from './components/Blog/Blog';
 
 function App() {
 
@@ -33,6 +35,8 @@ function App() {
     <Route path="/about" element={<About />} />
     <Route path="/healthPackages" element={<HealthPackage />}  />
     <Route path="/contact" element={<ContactUs/>}  />
+    <Route path="/appointment" element={<BookAppointment />}  />
+    <Route path="/blog" element={<Blog />} />
     </Routes>
 
     <Footer />

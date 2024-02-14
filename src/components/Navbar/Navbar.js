@@ -91,7 +91,7 @@ const Navbar = () => {
             </div>
 
           </nav>
-          <Link to="#appointment" className="appointment-btn scrollto ms-auto float-end">Make an Appointment</Link>
+          <Link to="/appointment" className="appointment-btn scrollto ms-auto float-end">Make an Appointment</Link>
         </div>
       </header>
     </>
