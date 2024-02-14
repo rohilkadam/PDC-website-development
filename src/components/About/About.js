@@ -5,7 +5,7 @@ const About = () => {
     <>
     
     <div className='body'>
-      <section id="about" className="about ">
+      <div id="about" className="about ">
       <div className="container" data-aos="fade-up">
         <div className="row">
           <div className="col-lg-6">
@@ -26,7 +26,7 @@ const About = () => {
           
         </div>
       </div>
-      </section>
+      </div>
 
       <section id="about-boxes" className="about-boxes">
       <div className="container" data-aos="fade-up">
@@ -72,7 +72,7 @@ const About = () => {
       </div>
       </section>
 
-      <section id="about2" className="about2">
+      <div id="about2" className="about2">
 
         <div className="container" data-aos="fade-up">
 
@@ -93,7 +93,7 @@ const About = () => {
           </div>
 
         </div>
-      </section>
+      </div>
       </div>
   
     </>
