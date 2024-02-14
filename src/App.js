@@ -18,6 +18,7 @@ import ContactUs from './components/Contact Us/ContactUs';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import HealthPackage from './components/HealthPackages/HealthPackage';
+import Achievements from './components/Achievements/Achievements';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
     <Route path="/about" element={<About />} />
     <Route path="/healthPackages" element={<HealthPackage />}  />
     <Route path="/contact" element={<ContactUs/>}  />
+    <Route path="/achievements" element={<Achievements />}  />
     </Routes>
 
     <Footer />
