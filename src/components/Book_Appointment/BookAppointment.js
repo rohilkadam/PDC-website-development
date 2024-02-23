@@ -54,7 +54,7 @@ const BookAppointment = () => {
   return (
     <div className="body">
     <div className="appointment-form ">
-      <div className="container">
+      <div className="container shadow">
         <h1>Book Appointment</h1>
         <form>
           <div className="w-md-50 mb-3">

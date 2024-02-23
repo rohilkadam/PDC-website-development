@@ -20,6 +20,7 @@ import Home from './components/Home/Home';
 import HealthPackage from './components/HealthPackages/HealthPackage';
 import BookAppointment from './components/Book_Appointment/BookAppointment';
 import Blog from './components/Blog/Blog';
+import BlogText from './components/Blog/BlogText';
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
     <Route path="/contact" element={<ContactUs/>}  />
     <Route path="/appointment" element={<BookAppointment />}  />
     <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/:id" element={<BlogText />} />
     </Routes>
 
     <Footer />
