@@ -51,12 +51,18 @@ const Navbar = () => {
         </div>
         {/* Logo and Center Name */}
         <div className="logo-container row">
-          <div className="col-md-4 col-sm-12 text-end">
+
+          <div className="col-md-3 col-sm-12 text-end">
             <img src="images/logo.png" alt="Poona Diabetic Centre Logo" className="img-fluid" />
           </div>
+
           <div className="col-md-6 col-sm-12 row-flex fw-bold">
           <div class="large-font text-center pt-1 fs-1">POONA DIABETES CENTRE</div>
-          <div class="small-font text-center text-red ">NO-1 DIABETES SPECIALITY CENTRE IN PUNE | NBA A+ ACCREDIATED</div>
+          <div class="small-font text-center text-red ">NO-1 DIABETES SPECIALITY CENTRE IN PUNE | ISO 9001-2015 | ESTD. :2006</div>
+          </div>
+
+          <div className="col-md-3 col-sm-12 text-start">
+            <img src="images/logo1.jpg" alt="NBA accrediation logo" className="img-fluid" />
           </div>
 
 
