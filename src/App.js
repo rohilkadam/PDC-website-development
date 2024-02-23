@@ -23,6 +23,7 @@ import Blog from './components/Blog/Blog';
 import Achievements from './components/Achievements/Achievements';
 import Gallery1 from './components/Gallery/Gallery';
 import BlogText from './components/Blog/BlogText';
+import Services from './components/Services/Services';
 
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
     <Route path="/blog/:id" element={<BlogText />} />
     <Route path="/achievements" element={<Achievements />}  />
     <Route path="/gallery" element={<Gallery1 />} />
+    <Route path="/services" element={<Services />} />
 
     </Routes>
 
