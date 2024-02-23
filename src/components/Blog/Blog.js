@@ -4,9 +4,6 @@ import './Blog.css';
 import blogData from '../../Data/blogs';
 import BlogText from './BlogText.js';
 function Blog() {
-  
-
-
 
   return (
     <>

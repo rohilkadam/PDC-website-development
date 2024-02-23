@@ -5,9 +5,11 @@ import blogData from "../../Data/blogs";
 import RelatedPosts from "./RelatedPosts";
 function BlogText() {
   const { id } = useParams(); // Access the 'id' parameter from the URL
-  console.log(id);
+ 
   const post = blogData.find((post) => post.id === parseInt(id)); // Find the corresponding blog post
-
+  const postId=parseInt(id);
+  
+  
   if (!post) {
     return <div>Post not found</div>;
   }
@@ -28,7 +30,7 @@ function BlogText() {
                 </div>
               </div>
               <div className="col-lg-4">
-                <RelatedPosts/>
+                <RelatedPosts postId={postId}/>
               </div>
             </div>
             <div className="about-author-container">
