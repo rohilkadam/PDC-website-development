@@ -21,7 +21,7 @@ const Counts = () => {
                 /></span>
 
               <p><strong>Happy Customers</strong> consequuntur quae qui deca rode</p>
-              <a href="#">Find out more &raquo;</a>
+              
             </div>
           </div>
 
@@ -34,7 +34,7 @@ const Counts = () => {
                     duration={5}
                 /></span>
               <p><strong>Staff</strong> adipisci atque cum quia aut numquam delectus</p>
-              <a href="#">Find out more &raquo;</a>
+              
             </div>
           </div>
 
@@ -47,7 +47,7 @@ const Counts = () => {
                     duration={5}
                 /></span>
               <p><strong>Research Projects</strong> aut commodi quaerat. Aliquam ratione</p>
-              <a href="#">Find out more &raquo;</a>
+              
             </div>
           </div>
 
@@ -60,7 +60,7 @@ const Counts = () => {
                     duration={5}
                 /></span>
               <p><strong>Awards</strong> rerum asperiores dolor molestiae doloribu</p>
-              <a href="#">Find out more &raquo;</a>
+              
             </div>
           </div>
 

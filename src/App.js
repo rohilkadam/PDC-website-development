@@ -18,7 +18,11 @@ import ContactUs from './components/Contact Us/ContactUs';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import HealthPackage from './components/HealthPackages/HealthPackage';
+import BookAppointment from './components/Book_Appointment/BookAppointment';
+import Blog from './components/Blog/Blog';
 import Achievements from './components/Achievements/Achievements';
+import Gallery1 from './components/Gallery/Gallery';
+
 
 function App() {
 
@@ -34,7 +38,11 @@ function App() {
     <Route path="/about" element={<About />} />
     <Route path="/healthPackages" element={<HealthPackage />}  />
     <Route path="/contact" element={<ContactUs/>}  />
+    <Route path="/appointment" element={<BookAppointment />}  />
+    <Route path="/blogs" element={<Blog />} />
     <Route path="/achievements" element={<Achievements />}  />
+    <Route path="/gallery" element={<Gallery1 />} />
+
     </Routes>
 
     <Footer />
