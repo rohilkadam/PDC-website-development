@@ -22,6 +22,7 @@ import BookAppointment from './components/Book_Appointment/BookAppointment';
 import Blog from './components/Blog/Blog';
 import Achievements from './components/Achievements/Achievements';
 import Gallery1 from './components/Gallery/Gallery';
+import BlogText from './components/Blog/BlogText';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
     <Route path="/contact" element={<ContactUs/>}  />
     <Route path="/appointment" element={<BookAppointment />}  />
     <Route path="/blogs" element={<Blog />} />
+    <Route path="/blog/:id" element={<BlogText />} />
     <Route path="/achievements" element={<Achievements />}  />
     <Route path="/gallery" element={<Gallery1 />} />
 

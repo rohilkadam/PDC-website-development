@@ -5,12 +5,12 @@ const About = () => {
     <>
     
     <div className='body'>
-      <section id="about" className="about ">
+      <div id="about" className="about ">
       <div className="container" data-aos="fade-up">
         <div className="row">
           <div className="col-lg-6">
             <h2>About Us</h2>
-            <div className="our-story">
+            <div className="our-story shadow">
               <h4>Est 2006</h4>
               <h3>Our Story</h3>
               <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint molestiae, dolorem enim nostrum ducimus debitis pariatur adipisci magnam numquam incidunt laboriosam molestias aperiam consectetur quis iusto, ratione perferendis dolorum totam quia provident illum corrupti neque nobis! Reiciendis sequi enim, voluptates in laudantium illo mollitia tempora ducimus repellat possimus sit! Id repellat accusantium exercitationem inventore! Ut at vero quidem voluptates error aspernatur ducimus alias qui, quaerat voluptate similique tempora, facere tempore?</p>
@@ -21,31 +21,31 @@ const About = () => {
             </div>
           </div>
           
-          <img src="https://img.freepik.com/free-psd/interior-modern-emergency-room-with-empty-nurses-station-generative-ai_587448-2137.jpg?w=826&t=st=1706612487~exp=1706613087~hmac=e4083bbea02b8a221dbbd98d64d4463528a85a1ff687001ad07d449747881cdf" className="col-lg-6" alt="" />
+          <img src="https://img.freepik.com/free-psd/interior-modern-emergency-room-with-empty-nurses-station-generative-ai_587448-2137.jpg?w=826&t=st=1706612487~exp=1706613087~hmac=e4083bbea02b8a221dbbd98d64d4463528a85a1ff687001ad07d449747881cdf" className="col-lg-6 shadow" alt="" />
           
           
         </div>
       </div>
-      </section>
+      </div>
 
       <section id="about-boxes" className="about-boxes">
       <div className="container" data-aos="fade-up">
 
         <div className="row">
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-              <div className="card">
+              <div className="card shadow">
               <img src="https://img.freepik.com/free-photo/empty-laboratory-with-scientific-monitor-desk_482257-18203.jpg?size=626&ext=jpg" alt="..." />
               <div className="card-icon">
                   <i className="ri-brush-4-line"></i>
               </div>
-              <div className="card-body">
+              <div className="card-body ">
                   <h5 className="card-title"><a href="">Our Mission</a></h5>
                   <p className="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
               </div>
               </div>
           </div>
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-              <div className="card">
+              <div className="card shadow">
               <img src="https://img.freepik.com/free-photo/doctor-with-stethoscope-hands-hospital-background_1423-1.jpg?w=740&t=st=1706606855~exp=1706607455~hmac=3f65eea35fbcfc4583d42bcbdd10d8ef86c66d22e0eadbeaa70cb94fce07e9c1" className="card-img-top" alt="..." />
               <div className="card-icon">
                   <i className="ri-calendar-check-line"></i>
@@ -57,7 +57,7 @@ const About = () => {
               </div>
           </div>
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-              <div className="card">
+              <div className="card shadow">
               <img src="https://img.freepik.com/free-photo/empty-laboratory-with-scientific-monitor-desk_482257-18203.jpg?size=626&ext=jpg" alt="..." />
               <div className="card-icon">
                   <i className="ri-movie-2-line"></i>
@@ -72,13 +72,13 @@ const About = () => {
       </div>
       </section>
 
-      <section id="about2" className="about2">
+      <div id="about2" className="about2">
 
-        <div className="container" data-aos="fade-up">
+        <div className="container shadow" data-aos="fade-up">
 
           <div className="row">
 
-            <div className="col-lg-6 video-box align-self-baseline position-relative" data-aos="zoom-in" data-aos-delay="100">
+            <div className="shadow col-lg-6 video-box align-self-baseline position-relative" data-aos="zoom-in" data-aos-delay="100">
               <img src="https://img.freepik.com/free-photo/empty-laboratory-with-scientific-monitor-desk_482257-18203.jpg?size=626&ext=jpg" className="img-fluid" alt=""/>
               <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" className="glightbox play-btn mb-4"></a>
             </div>
@@ -93,7 +93,7 @@ const About = () => {
           </div>
 
         </div>
-      </section>
+      </div>
       </div>
   
     </>
