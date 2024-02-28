@@ -56,7 +56,6 @@ function App() {
     <Route path="/gallery" element={<Gallery1 />} />
     <Route path="/services" element={<Services />} />
 
-    <Route pth="/admin" element={<Index /> } />
 
     </Routes>
 
