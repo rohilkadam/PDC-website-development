@@ -10,8 +10,8 @@ import Popper from 'popper.js';
 
 
 
-import { useState } from 'react';
-import { Route,Routes } from 'react-router';
+import { useState , useEffect } from 'react';
+import { Route,Routes, useLocation } from 'react-router';
 import Navbar from './components/Navbar/Navbar';
 import About from './components/About/About';
 import ContactUs from './components/Contact Us/ContactUs';
@@ -24,14 +24,23 @@ import Achievements from './components/Achievements/Achievements';
 import Gallery1 from './components/Gallery/Gallery';
 import BlogText from './components/Blog/BlogText';
 import Services from './components/Services/Services';
+import Index from './Admin/Index';
 
 
 function App() {
 
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+  
 
 
   return (
     <>
+    
     <Navbar  />
     
 
@@ -46,6 +55,8 @@ function App() {
     <Route path="/achievements" element={<Achievements />}  />
     <Route path="/gallery" element={<Gallery1 />} />
     <Route path="/services" element={<Services />} />
+
+    <Route pth="/admin" element={<Index /> } />
 
     </Routes>
 

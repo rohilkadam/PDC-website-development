@@ -19,7 +19,11 @@ body {
 .body{
   margin-top: 15rem;
 }
-
+@media screen and (max-width: 768px) {
+  .body{
+    margin-top: 22rem;
+  }
+}
 body {
   font-family: "Roboto", sans-serif;
   color: #444444;
