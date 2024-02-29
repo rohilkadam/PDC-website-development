@@ -89,8 +89,8 @@
     margin-top: -32px;
   }
   
-  .about-boxes .card-icon i {
-    font-size: 32px;
+  .about-boxes .card-icon svg {
+    font-size: 22px;
     color: #fff;
     width: 64px;
     height: 64px;

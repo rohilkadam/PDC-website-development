@@ -118,7 +118,7 @@
     height: 160px;
   }
   #topbar.topbar-scrolled{
-    top:-200px
+    top:-270px
   }
   #header{
     top : -160px
@@ -325,7 +325,6 @@
 }
 
 .navbar-mobile a:hover,
-.navbar-mobile .active,
 .navbar-mobile li:hover>a {
   color: #fff;
 }

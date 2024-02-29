@@ -1,5 +1,9 @@
 import React from 'react'
 import "./About.css";
+import { FaBullseye } from "react-icons/fa";
+import { CiCalendarDate } from "react-icons/ci";
+import { AiOutlineAim } from "react-icons/ai";
+
 const About = () => {
   return (
     <>
@@ -36,7 +40,7 @@ const About = () => {
               <div className="card shadow">
               <img src="https://img.freepik.com/free-photo/empty-laboratory-with-scientific-monitor-desk_482257-18203.jpg?size=626&ext=jpg" alt="..." />
               <div className="card-icon">
-                  <i className="ri-brush-4-line"></i>
+              <AiOutlineAim />
               </div>
               <div className="card-body ">
                   <h5 className="card-title"><a href="">Our Mission</a></h5>
@@ -48,7 +52,7 @@ const About = () => {
               <div className="card shadow">
               <img src="https://img.freepik.com/free-photo/doctor-with-stethoscope-hands-hospital-background_1423-1.jpg?w=740&t=st=1706606855~exp=1706607455~hmac=3f65eea35fbcfc4583d42bcbdd10d8ef86c66d22e0eadbeaa70cb94fce07e9c1" className="card-img-top" alt="..." />
               <div className="card-icon">
-                  <i className="ri-calendar-check-line"></i>
+              <CiCalendarDate />
               </div>
               <div className="card-body">
                   <h5 className="card-title"><a href="">Our Plan</a></h5>
@@ -60,7 +64,7 @@ const About = () => {
               <div className="card shadow">
               <img src="https://img.freepik.com/free-photo/empty-laboratory-with-scientific-monitor-desk_482257-18203.jpg?size=626&ext=jpg" alt="..." />
               <div className="card-icon">
-                  <i className="ri-movie-2-line"></i>
+              <FaBullseye />
               </div>
               <div className="card-body">
                   <h5 className="card-title"><a href="">Our Vision</a></h5>

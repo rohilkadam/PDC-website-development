@@ -1,0 +1,29 @@
+.body.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 10px;
+}
+
+.photo-album {
+    width: 100%;
+}
+
+.photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .body.container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .body.container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+}

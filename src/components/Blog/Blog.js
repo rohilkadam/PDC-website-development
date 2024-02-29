@@ -16,7 +16,7 @@ function Blog() {
         <div className="row">
         {blogData.map(post => (
           
-          <div key={post.id} className="col-lg-4 blog-post  shadow">
+          <div key={post.id} className="col-lg-4 blog-post blog-card  shadow">
             <img src={post.image} alt="" className="card-img-top"/>
             <div className="card-body">
             <h5 className="card-title ">{post.title}</h5>
