@@ -5,7 +5,7 @@ const { body, validationResult } = require('express-validator');
 const fetchuser = require('../middleware/fetchuser');
 
 // ROUTE 1: Get All the Awards using: GET "/api/awards/fetchallawards". Login required
-router.get('/fetchallblogs',fetchuser,async (req,res)=>{
+router.get('/fetchallawards',fetchuser,async (req,res)=>{
     try {
         const awards = await Award.find({user:req.user.id});
         res.json(awards);
