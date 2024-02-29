@@ -13,11 +13,7 @@ const navbarItems = [
     },
     {
       title: "Blogs",
-<<<<<<< HEAD
-      link: "/blog",
-=======
       link: "/blogs",
->>>>>>> mayuri
     },
     {
       title:"Health Packages",
