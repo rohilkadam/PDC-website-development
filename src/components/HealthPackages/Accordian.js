@@ -1,6 +1,6 @@
 import React from 'react'
 import Items from './Items'
-import HealthPackageData from '../../Data/HealthPackages';
+import HealthPackageData from '../Data/HealthPackages';
 
 const Accordian = () => {
 

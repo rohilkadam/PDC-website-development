@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './Blog.css';
-import blogData from '../../Data/blogs';
+import blogData from '../Data/blogs.js';
 import BlogText from './BlogText.js';
+
 function Blog() {
 
   return (

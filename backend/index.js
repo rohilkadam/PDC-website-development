@@ -19,6 +19,8 @@ app.use(express.json())
 //available routes
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/blogs',require('./routes/blog'))
+app.use('/api/award',require('./routes/award'))
+app.use('/api/testimonial',require('./routes/testimonial'))
 
 
 

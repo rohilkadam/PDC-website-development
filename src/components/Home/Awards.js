@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination,Autoplay } from 'swiper/modules';
-import AwardsData from '../../Data/AwardsData';
+import AwardsData from '../Data/AwardsData';
 
 const Awards = () => {
     const swiperParams = {

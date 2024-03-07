@@ -7,7 +7,7 @@ import Slideshow from "yet-another-react-lightbox/plugins/slideshow";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
-import photos from "../../Data/Photos";
+import photos from "../Data/Photos";
 
 export default function Gallery1() {
     const [index, setIndex] = useState(-1);

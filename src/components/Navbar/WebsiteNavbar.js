@@ -1,11 +1,11 @@
 import React, { Fragment, useEffect, useState } from "react";
 import "./Navbar.css";
-import navbarItems from "../../Data/NavbarItems";
+import navbarItems from "../Data/NavbarItems";
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaEnvelope, FaFacebook, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 
-const Navbar = () => {
+const WebsiteNavbar = () => {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -40,6 +40,7 @@ const Navbar = () => {
 
   return (
     <>
+    <div className="websitenavbar">
       <div id="topbar" className={` ${scrolled ? "topbar-scrolled" : ""} fixed-top`}>
         <div className="container d-flex justify-content-between p-2">
           <div className="contact-info d-flex align-items-center">
@@ -89,8 +90,10 @@ const Navbar = () => {
           <Link to="/appointment" className="appointment-btn scrollto ms-auto float-end">Make an Appointment</Link>
         </div>
       </header>
+
+      </div>
     </>
   );
 };
 
-export default Navbar;
+export default WebsiteNavbar;

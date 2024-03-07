@@ -7,7 +7,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination,Autoplay } from 'swiper/modules';
-import TestimonialsData from '../../Data/TestimonialsData';
+import TestimonialsData from '../Data/TestimonialsData';
 import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 
 const Testimonials = () => {

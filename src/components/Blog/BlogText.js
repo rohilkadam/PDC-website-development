@@ -1,7 +1,7 @@
 import React from "react";
 import "./BlogText.css";
 import { useParams } from "react-router-dom"; // Import useParams to access route parameters
-import blogData from "../../Data/blogs";
+import blogData from "../Data/blogs";
 import RelatedPosts from "./RelatedPosts";
 function BlogText() {
   const { id } = useParams(); // Access the 'id' parameter from the URL

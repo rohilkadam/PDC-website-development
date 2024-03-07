@@ -138,11 +138,11 @@
 /**
 * Desktop Navigation 
 */
-.navbar {
+.websitenavbar .navbar {
   padding: 0;
 }
 
-.navbar ul {
+.websitenavbar .navbar ul {
   margin: 0;
   padding: 0;
   display: flex;
@@ -150,18 +150,18 @@
   align-items: center;
 }
 
-.navbar li {
+.websitenavbar .navbar li {
   position: relative;
 }
 
-.navbar>ul>li {
+.websitenavbar .navbar>ul>li {
   position: relative;
   white-space: nowrap;
   padding: 8px 0 8px 40px;
 }
 
-.navbar a,
-.navbar a:focus {
+.websitenavbar .navbar a,
+.websitenavbar .navbar a:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -174,22 +174,22 @@
   font-size: 16px;
 }
 
-.navbar a i,
-.navbar a:focus i {
+.websitenavbar .navbar a i,
+.websitenavbar .navbar a:focus i {
   font-size: 12px;
   line-height: 0;
   margin-left: 5px;
 }
 
-.navbar a:hover,
-.navbar .active,
-.navbar .active:focus,
-.navbar li:hover>a {
+.websitenavbar .navbar a:hover,
+.websitenavbar .navbar .active,
+.websitenavbar .navbar .active:focus,
+.websitenavbar .navbar li:hover>a {
   color: #2c4964;
   border-color: #fff;
 }
 
-.navbar .dropdown ul {
+.websitenavbar .navbar .dropdown ul {
   display: block;
   position: absolute;
   left: 20px;
@@ -204,11 +204,11 @@
   transition: 0.3s;
 }
 
-.navbar .dropdown ul li {
+.websitenavbar .navbar .dropdown ul li {
   min-width: 200px;
 }
 
-.navbar .dropdown ul a {
+.websitenavbar .navbar .dropdown ul a {
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 500;
@@ -217,29 +217,29 @@
   border: none;
 }
 
-.navbar .dropdown ul a i {
+.websitenavbar .navbar .dropdown ul a i {
   font-size: 12px;
 }
 
-.navbar .dropdown ul a:hover,
-.navbar .dropdown ul .active:hover,
-.navbar .dropdown ul li:hover>a {
+.websitenavbar .navbar .dropdown ul a:hover,
+.websitenavbar .navbar .dropdown ul .active:hover,
+.websitenavbar .navbar .dropdown ul li:hover>a {
   color: #fff;
 }
 
-.navbar .dropdown:hover>ul {
+.websitenavbar .navbar .dropdown:hover>ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
 }
 
-.navbar .dropdown .dropdown ul {
+.websitenavbar .navbar .dropdown .dropdown ul {
   top: 0;
   left: calc(100% - 30px);
   visibility: hidden;
 }
 
-.navbar .dropdown .dropdown:hover>ul {
+.websitenavbar .navbar .dropdown .dropdown:hover>ul {
   opacity: 1;
   top: 0;
   left: 100%;
@@ -247,11 +247,11 @@
 }
 
 @media (max-width: 1366px) {
-  .navbar .dropdown .dropdown ul {
+  .websitenavbar .navbar .dropdown .dropdown ul {
     left: -90%;
   }
 
-  .navbar .dropdown .dropdown:hover>ul {
+  .websitenavbar .navbar .dropdown .dropdown:hover>ul {
     left: -100%;
   }
 }
@@ -276,12 +276,12 @@
     display: block;
   }
 
-  .navbar ul {
+  .websitenavbar .navbar ul {
     display: none;
   }
 }
 
-.navbar-mobile {
+.websitenavbar .navbar-mobile {
   position: fixed;
   overflow: hidden;
   top: 0;
@@ -293,13 +293,13 @@
   z-index: 999;
 }
 
-.navbar-mobile .mobile-nav-toggle {
+.websitenavbar .navbar-mobile .mobile-nav-toggle {
   position: absolute;
   top: 15px;
   right: 15px;
 }
 
-.navbar-mobile ul {
+.websitenavbar .navbar-mobile ul {
   display: block;
   position: absolute;
   top: 55px;
@@ -312,29 +312,29 @@
   transition: 0.3s;
 }
 
-.navbar-mobile>ul>li {
+.websitenavbar .navbar-mobile>ul>li {
   padding: 0;
 }
 
-.navbar-mobile a,
-.navbar-mobile a:focus {
+.websitenavbar .navbar-mobile a,
+.websitenavbar .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
   color: #2c4964;
   border: none;
 }
 
-.navbar-mobile a:hover,
-.navbar-mobile li:hover>a {
+.websitenavbar .navbar-mobile a:hover,
+.websitenavbar .navbar-mobile li:hover>a {
   color: #fff;
 }
 
-.navbar-mobile .getstarted,
-.navbar-mobile .getstarted:focus {
+.websitenavbar .navbar-mobile .getstarted,
+.websitenavbar .navbar-mobile .getstarted:focus {
   margin: 15px;
 }
 
-.navbar-mobile .dropdown ul {
+.websitenavbar .navbar-mobile .dropdown ul {
   position: static;
   display: none;
   margin: 10px 20px;
@@ -346,24 +346,24 @@
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
 }
 
-.navbar-mobile .dropdown ul li {
+.websitenavbar .navbar-mobile .dropdown ul li {
   min-width: 200px;
 }
 
-.navbar-mobile .dropdown ul a {
+.websitenavbar .navbar-mobile .dropdown ul a {
   padding: 10px 20px;
 }
 
-.navbar-mobile .dropdown ul a i {
+.websitenavbar .navbar-mobile .dropdown ul a i {
   font-size: 12px;
 }
 
-.navbar-mobile .dropdown ul a:hover,
-.navbar-mobile .dropdown ul .active:hover,
-.navbar-mobile .dropdown ul li:hover>a {
+.websitenavbar .navbar-mobile .dropdown ul a:hover,
+.websitenavbar .navbar-mobile .dropdown ul .active:hover,
+.websitenavbar .navbar-mobile .dropdown ul li:hover>a {
   color: #fff;
 }
 
-.navbar-mobile .dropdown>.dropdown-active {
+.websitenavbar .navbar-mobile .dropdown>.dropdown-active {
   display: block;
 }

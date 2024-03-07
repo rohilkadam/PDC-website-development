@@ -1,6 +1,6 @@
 import React from 'react'
 import Awards from '../Home/Awards'
-import AwardsData from '../../Data/AwardsData'
+import AwardsData from '../Data/AwardsData'
 
 const Achievements = () => {
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './RelatedPosts.css';
-import blogData from '../../Data/blogs';
+import blogData from '../Data/blogs.js';
 import BlogText from './BlogText.js';
 function RelatedPosts({postId}) {
  

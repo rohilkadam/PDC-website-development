@@ -1,5 +1,5 @@
 import React from 'react'
-import ServicesData from '../../Data/ServicesData'
+import ServicesData from '../Data/ServicesData'
 import { FaHospital } from 'react-icons/fa'
 
 const Services = () => {
