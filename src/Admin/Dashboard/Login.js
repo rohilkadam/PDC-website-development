@@ -38,13 +38,12 @@ const Login = (props) => {
         <section className="">
             <div className="container bg-light-subtle shadow w-75 mx-auto">
                 <div className="row justify-content-center">
-                    <div className="col-lg-8">
+                    <div className="col-lg-6">
                         <div className="wrap d-md-flex">
-                            <div className="img" style={{ backgroundImage: `url(https://www.auis.edu/wp-content/uploads/2019/09/rs261_157781379-low.jpg)` }}></div>
                             <div className="login-wrap p-4 p-md-5">
                                 <div className="d-flex">
-                                    <div className="w-100">
-                                        <h3 className="mb-4">Log-In To PDC Admin</h3>
+                                    <div className="w-100 fw-bolder text-center">
+                                        <h3 className="mb-4 text-danger">Log-In To PDC Admin</h3>
                                     </div>
                                 </div>
                                 <form className="signin-form" onSubmit={handleSubmit}>
@@ -67,6 +66,11 @@ const Login = (props) => {
                                 </form>
                             </div>
                         </div>
+                    </div>
+                    <div className='col-lg-6'>
+                    <div className="img text-center" >
+                        <img src='https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg' className='img-fluid  my-auto' />
+                            </div>
                     </div>
                 </div>
             </div>

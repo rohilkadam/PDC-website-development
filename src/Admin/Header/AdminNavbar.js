@@ -29,7 +29,7 @@ const AdminNavbar = () => {
       <div class="list-group list-group-flush mx-3 mt-4">
         <Link
            to="/admin"
-           class="list-group-item list-group-item-action py-3 ripple"
+           class="list-group-item list-group-item-action py-3 ripple active"
            aria-current="true"
            >
             <MdDashboard />
@@ -37,7 +37,7 @@ const AdminNavbar = () => {
         </Link>
         <Link
            to="/admin/blogs"
-           class="list-group-item list-group-item-action py-3 ripple active"
+           class="list-group-item list-group-item-action py-3 ripple "
            >
           <FaBloggerB />
             <span>Blogs</span>
@@ -53,17 +53,6 @@ const AdminNavbar = () => {
        class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow"
        >
    <div class="container-fluid">
-      <button
-              class="navbar-toggler"
-              type="button"
-              data-mdb-toggle="collapse"
-              data-mdb-target="#sidebarMenu"
-              aria-controls="sidebarMenu"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-              >
-        <i class="fas fa-bars"></i>
-      </button>
 
      
       <Link class="navbar-brand align-items-center" to="#">

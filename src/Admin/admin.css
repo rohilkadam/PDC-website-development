@@ -27,6 +27,7 @@ body {
 .adminNav .sidebar .active {
   border-radius: 5px;
   box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+  background-color: red;
 }
 
 .adminNav .sidebar-sticky {
@@ -55,5 +56,28 @@ body {
 .admin .form-group label{
   font-weight: bold;
   font-size: 18px;
+}
+.btn-danger{
+  color: white;
+  background: red;
+}
+
+.table-heading{
+color: red;
+font-weight: bolder;
+font-size: 40px;
+}
+
+.table button{
+  color: red;
+  margin: auto;
+  background: #fff;
+  border: none;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  align-items: center;
+  border-radius: 3px;
+  font-size: 18px;
+  padding: 5px;
 }
 
