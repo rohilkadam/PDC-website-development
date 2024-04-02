@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -6,6 +7,22 @@ import { Pagination,Autoplay } from 'swiper/modules';
 import AwardsData from '../Data/AwardsData';
 
 const Awards = () => {
+    const [awardData, setawardData] = useState([]);
+
+  async function fetchawards() {
+    const res = await axios.get(
+      `http://localhost:5000/api/award/fetchallawards`
+    );
+    
+    setawardData(res.data);
+    console.log("data");
+    console.log(awardData);
+  }
+
+  useEffect(() => {
+    fetchawards();
+  }, []);
+
     const swiperParams = {
         speed: 700,
         loop: true,
@@ -43,7 +60,7 @@ const Awards = () => {
                     <Swiper {...swiperParams}
                    pagination={true} modules={[Pagination,Autoplay]}
                    className='awards-slider'>
-                        {AwardsData.map((index,i)=>(
+                        {awardData.map((index,i)=>(
                             <SwiperSlide key={i}>
                                 <div class="card card-award">
                                     <img class="card-img rounded-0" src={index.img} alt="" />

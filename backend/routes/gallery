@@ -1,0 +1,75 @@
+const express = require('express');
+const Gallery = require('../models/GallerySchema');
+const router = express.Router();
+
+const fetchuser = require('../middleware/fetchuser');
+const cloudinary = require("../utils/cloudinary");
+const upload = require("../utils/multer");
+
+// ROUTE 1: Get All the Gallerys using: GET "/api/Gallerys/fetchallGallerys". Login required
+router.get('/fetchallimages',async (req,res)=>{
+    try {
+        const data = await Gallery.find();
+        res.json(data);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+// ROUTE 2: Add a new Gallery using: POST "/api/Gallery/addGallery". Login required
+
+router.post('/addGallery', fetchuser,upload.single("image"), async (req, res) => {
+        try {
+            const result = await cloudinary.uploader.upload(req.file.path);
+            const { category} = req.body;
+            const image = result.secure_url;
+
+            const newimage = new Gallery({
+                image, category
+            })
+            console.log(newimage);
+            const savedGallery = await newimage.save()
+
+            res.json(savedGallery)
+        } catch (error) {
+            console.error(error.message);
+            res.status(500).send("Internal Server Error");
+        }
+    }
+);
+
+// ROUTE 3: Update an existing Gallery using: PUT "/api/notes/updateGallery". Login required
+router.put('/updateGallery/:id', fetchuser, async (req, res) => {
+    const { title, description, image } = req.body;
+    try {
+        
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+
+// ROUTE 4: Delete an existing Gallery using: DELETE "/api/notes/deleteGallery". Login required
+router.delete('/deleteGallery/:id',fetchuser,async (req,res)=>{
+    try {
+        // Find the note to be delete and delete it
+        let data = await Gallery.findById(req.params.id);
+        if (!data) { return res.status(404).send("Not Found") }
+
+        data = await Gallery.findByIdAndDelete(req.params.id)
+        res.json({ "Success": "Note has been deleted", data : data });
+
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+})
+
+
+
+
+
+module.exports = router;

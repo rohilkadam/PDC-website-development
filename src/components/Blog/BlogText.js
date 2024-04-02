@@ -1,36 +1,53 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import "./BlogText.css";
 import { useParams } from "react-router-dom"; // Import useParams to access route parameters
-import blogData from "../Data/blogs";
+//import blogData from "../Data/blogs";
 import RelatedPosts from "./RelatedPosts";
+
 function BlogText() {
-  const { id } = useParams(); // Access the 'id' parameter from the URL
- 
-  const post = blogData.find((post) => post.id === parseInt(id)); // Find the corresponding blog post
-  const postId=parseInt(id);
   
-  
-  if (!post) {
-    return <div>Post not found</div>;
+  // const postId=parseInt(id);
+  const [blogData, setblogData] = useState([]);
+
+  async function fetchblogs() {
+    try {
+      const res = await axios.get(
+        `http://localhost:5000/api/blogs/fetchblog/${id}` // Include the ID parameter in the API call
+      );
+      
+      setblogData(res.data);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
+  useEffect(() => {
+    fetchblogs();
+  }, []);
+
+  const { id } = useParams(); // Access the 'id' parameter from the URL
+
+  console.log("post");
+  console.log(blogData.length);
+  
+  // Assuming you want to display the post content, you can render it here
   return (
     <>
       <div className="body">
         <div className="blog-text">
           <div className="container-lg">
             <div className="row">
-              <div key={post.id} className="col-lg-8">
-                <div className="card-body">
-                  <h3 className="card-title ">{post.title}</h3>
-                </div>
-                <img src={post.image} alt="" className="card-img-top" />
-                <div className="card-body">
-                  <p className="card-text">{post.text}</p>
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <RelatedPosts postId={postId}/>
+              <div  className="col-lg-8">
+                {/* Render the post content here */}
+                {/* For example: */}
+                {blogData && blogData.title && (
+                  <div>
+                    <h3 className="card-title">{blogData.title}</h3>
+                    <img src={blogData.image} alt="" className="card-img-top" />
+                    <p className="card-text">{blogData.description  }</p>
+                  </div>
+                )}
               </div>
             </div>
             <div className="about-author-container">

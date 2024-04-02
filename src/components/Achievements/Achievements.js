@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Awards from '../Home/Awards'
 import AwardsData from '../Data/AwardsData'
 
 const Achievements = () => {
+  const [awardData, setawardData] = useState([]);
+
+  async function fetchawards() {
+    const res = await axios.get(
+      `http://localhost:5000/api/award/fetchallawards`
+    );
+    
+    setawardData(res.data);
+  }
+
+  useEffect(() => {
+    fetchawards();
+  }, []);
   return (
     <>
     <div className='body'>
      <div className='container row m-auto mt-5'>
-     {AwardsData.map((index,i)=>(
+     {awardData.map((index,i)=>(
                            
                                 <div class=" col-md-4 card card-award my-3" key={i}>
                                     <img class="card-img rounded-0" src={index.img} alt="" />

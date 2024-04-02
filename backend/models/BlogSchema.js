@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 const {Schema} = mongoose;
 
 const BlogSchema = new Schema({
-    user:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'user'
-      },
+   
     title:{
         type:String,
         required:true
@@ -22,7 +19,7 @@ const BlogSchema = new Schema({
         type:Date,
         default:Date.now
     }
-});
+}); 
 
 const Blog = mongoose.model('blog',BlogSchema);
 module.exports = Blog;

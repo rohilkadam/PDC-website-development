@@ -10,21 +10,42 @@ const AddBlog = () => {
 
     const handleClick = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/api/blogs/addblog`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
-            },
-            body: JSON.stringify(blog)
-        })
-        const res = await response.json();
-        setblog({ title: "", description: "", image: "" });
-        navigate('/admin/blogs')
+        
+        // Create FormData object
+        const formData = new FormData();
+        formData.append('title', blog.title);
+        formData.append('description', blog.description);
+        formData.append('image', blog.image); // Append the file
+    
+        try {
+            const response = await fetch(`http://localhost:5000/api/blogs/addblog`, {
+                method: 'POST',
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                },
+                body: formData // Use FormData as the body
+            });
+            const res = await response.json();
+            setblog({ title: "", description: "", image: "" });
+            navigate('/admin/blogs');
+        } catch (error) {
+            console.error("Error adding blog:", error);
+            // Handle error
+        }
     }
+    
     const onChange = (e) => {
-        setblog({ ...blog, [e.target.name]: e.target.value });
+        if (e.target.name === 'image') {
+            // Get the selected file
+            const file = e.target.files[0];
+            // Update the blog state with the selected file
+            setblog({ ...blog, [e.target.name]: file });
+        } else {
+            // For other input fields, update the blog state with the input value
+            setblog({ ...blog, [e.target.name]: e.target.value });
+        }
     }
+    
 
     return (
         <>
@@ -43,7 +64,7 @@ const AddBlog = () => {
                     </div>
                     <div className="form-group mb-3">
                         <label className="label" for="password">Image</label>
-                        <input type="text" name="image" value={blog.image} className="form-control" placeholder="image" required onChange={onChange} />
+                        <input type="file" name="image"  className="form-control" placeholder="image" required onChange={onChange} />
                     </div>
 
                 </form>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
@@ -7,10 +8,25 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Pagination,Autoplay } from 'swiper/modules';
-import TestimonialsData from '../Data/TestimonialsData';
+
 import { BiSolidQuoteAltLeft, BiSolidQuoteAltRight } from "react-icons/bi";
 
 const Testimonials = () => {
+  const [testimonialData, settestimonialData] = useState([]);
+
+  async function fetchtestimonials() {
+    const res = await axios.get(
+      `http://localhost:5000/api/testimonial/fetchalltestimonials`
+    );
+    
+    settestimonialData(res.data);
+    
+    
+  }
+
+  useEffect(() => {
+    fetchtestimonials();
+  }, []);
 
     const swiperParams = {
         speed: 800,
@@ -53,7 +69,7 @@ const Testimonials = () => {
                    pagination={true} modules={[Pagination,Autoplay]}
                         className='testimonials-slider'
                     >
-                        {TestimonialsData.map((index,i)=>(
+                        {testimonialData.map((index,i)=>(
                             <SwiperSlide key={i}>
                             <div class="testimonial-item">
                             <p>

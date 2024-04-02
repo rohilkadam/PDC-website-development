@@ -3,26 +3,41 @@ const Blog = require('../models/BlogSchema');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const fetchuser = require('../middleware/fetchuser');
+const cloudinary = require("../utils/cloudinary");
+const upload = require("../utils/multer");
 
 // ROUTE 1: Get All the Blogs using: GET "/api/blogs/fetchallblogs". Login required
-router.get('/fetchallblogs',fetchuser,async (req,res)=>{
+router.get('/fetchallblogs',async (req,res)=>{
     try {
-        const blogs = await Blog.find({user:req.user.id});
+        const blogs = await Blog.find();
         res.json(blogs);
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");
     }
 });
-
+router.get('/fetchblog/:id', async (req, res) => {
+    try {
+        const blog = await Blog.findById(req.params.id);
+        if (!blog) {
+            return res.status(404).json({ msg: 'Blog not found' });
+        }
+        res.json(blog);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
 // ROUTE 2: Add a new Blog using: POST "/api/blog/addblog". Login required
 
-router.post('/addblog', fetchuser, [
+router.post('/addblog', fetchuser,upload.single("image"), [
     body('title', 'Enter a valid title').isLength({ min: 3 }),
     body('description', 'Description must be atleast 5 characters').isLength({ min: 5 }),
 ], async (req, res) => {
         try {
-            const { title, description, image } = req.body;
+            const result = await cloudinary.uploader.upload(req.file.path);
+            const image = result.secure_url;
+            const { title, description } = req.body;
 
             // If there are errors, return Bad request and the errors
             const errors = validationResult(req);
@@ -30,7 +45,7 @@ router.post('/addblog', fetchuser, [
                 return res.status(400).json({ errors: errors.array() });
             }
             const newBlog = new Blog({
-                title, description, image, user: req.user.id
+                title, description, image
             })
             const savedBlog = await newBlog.save()
 
@@ -78,12 +93,9 @@ router.delete('/deleteblog/:id',fetchuser,async (req,res)=>{
         let blog = await Blog.findById(req.params.id);
         if (!blog) { return res.status(404).send("Not Found") }
 
-        // Allow deletion only if user owns this Note
-        if (blog.user.toString() !== req.user.id) {
-            return res.status(401).send("Not Allowed");
-        }
+
         blog = await Blog.findByIdAndDelete(req.params.id)
-        res.json({ "Success": "Note has been deleted", blog: blog });
+        res.json({ "Success": "Blog has been deleted", blog: blog });
 
     } catch (error) {
         console.error(error.message);

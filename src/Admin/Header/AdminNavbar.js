@@ -2,6 +2,8 @@ import React, { useContext } from 'react'
 import "../admin.css"
 import { MdDashboard } from "react-icons/md";
 import { FaBloggerB } from "react-icons/fa";
+import { FaAward } from "react-icons/fa6";
+import { TbMessage2Star } from "react-icons/tb";
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
@@ -42,6 +44,28 @@ const AdminNavbar = () => {
           <FaBloggerB />
             <span>Blogs</span>
         </Link>
+        <Link
+           to="/admin/award"
+           class="list-group-item list-group-item-action py-3 ripple "
+           >
+          <FaAward />
+            <span>Awards</span>
+         </Link>
+         <Link
+           to="/admin/testimonial"
+           class="list-group-item list-group-item-action py-3 ripple "
+           >
+          <TbMessage2Star />
+            <span>Testimonials</span>
+         </Link>
+
+         <Link
+           to="/admin/image"
+           class="list-group-item list-group-item-action py-3 ripple "
+           >
+          <TbMessage2Star />
+            <span>Gallery Images</span>
+         </Link>
         
         
       </div>
