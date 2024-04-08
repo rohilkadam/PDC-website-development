@@ -63,7 +63,7 @@ const Awards = () => {
                         {awardData.map((index,i)=>(
                             <SwiperSlide key={i}>
                                 <div class="card card-award">
-                                    <img class="card-img rounded-0" src={index.img} alt="" />
+                                    <img class="card-img rounded-0" src={index.image} alt="" />
                                     <div class="card-award__body text-center">
                                         <h3>{index.name}</h3>
                                         <p>{index.by}</p>

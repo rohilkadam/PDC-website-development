@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import "../admin.css"
-import { MdDashboard } from "react-icons/md";
-import { FaBloggerB } from "react-icons/fa";
-import { FaAward } from "react-icons/fa6";
+import { MdDashboard, MdMessage } from "react-icons/md";
+import { FaBloggerB, FaCalendar } from "react-icons/fa";
+import { FaAward, FaVoicemail } from "react-icons/fa6";
+import { MdMedicalServices } from "react-icons/md";
 import { TbMessage2Star } from "react-icons/tb";
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
@@ -66,6 +67,29 @@ const AdminNavbar = () => {
           <TbMessage2Star />
             <span>Gallery Images</span>
          </Link>
+
+         <Link
+           to="/admin/service"
+           class="list-group-item list-group-item-action py-3 ripple "
+           >
+          <MdMedicalServices />
+            <span>Services</span>
+          </Link>
+
+         <Link
+           to="/admin/appointment"
+           class="list-group-item list-group-item-action py-3 ripple "
+           >
+            <FaCalendar />
+            <span>Appointments</span>
+        </Link>
+        <Link
+           to="/admin/message"
+           class="list-group-item list-group-item-action py-3 ripple "
+           >
+           <MdMessage />
+            <span>Messages</span>
+        </Link>
         
         
       </div>

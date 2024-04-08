@@ -4,17 +4,20 @@ import { useNavigate } from 'react-router';
 const AddAward = () => {
     const navigate = useNavigate();
 
-    const [award, setAward] = useState({ name: "", issuedBy: "", description: "", image: null });
+    const [award, setAward] = useState({ name: "", issuedBy: "", description: "", image: ""});
 
     const handleClick = async (e) => {
         e.preventDefault();
 
         // Create FormData object
+        //console.log(award);
         const formData = new FormData();
         formData.append('name', award.name);
         formData.append('issuedBy', award.issuedBy);
         formData.append('description', award.description);
         formData.append('image', award.image);
+
+        //console.log(formData);
 
         try {
             const response = await fetch(`http://localhost:5000/api/award/addaward`, {
@@ -25,7 +28,7 @@ const AddAward = () => {
                 body: formData
             });
             const res = await response.json();
-            setAward({ name: "", issuedBy: "", description: "", image: null });
+            setAward({ name: "", issuedBy: "", description: "", image: "" });
             navigate('/admin/award');
         } catch (error) {
             console.error("Error adding award:", error);

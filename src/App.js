@@ -23,7 +23,7 @@ import Blog from './components/Blog/Blog';
 import Achievements from './components/Achievements/Achievements';
 import Gallery1 from './components/Gallery/Gallery';
 import BlogText from './components/Blog/BlogText';
-import Services from './components/Services/Services';
+//import Services from './components/Services/Services';
 import Index from './Admin/Index';
 import BlogView from './Admin/Dashboard/BlogView';
 import Login from './Admin/Dashboard/Login';
@@ -35,6 +35,13 @@ import TestimonialView from './Admin/Dashboard/TestimonialView';
 import AddTestimonial from './Admin/Dashboard/AddTestimonial';
 import GalleryView from './Admin/Dashboard/GalleryView';
 import AddGallery from './Admin/Dashboard/AddGallery';
+import AppointmentView from './Admin/Dashboard/AppointmentView';
+import MessageView from './Admin/Dashboard/MessageView';
+
+import ServiceInfo from './components/Services/ServiceInfo';
+import Service from './components/Services/Service';
+import ServiceView from './Admin/Dashboard/ServiceView';
+import AddService from './Admin/Dashboard/AddService';
 
 function App() {
   const [userData, setUserData] = useState({
@@ -46,6 +53,7 @@ function App() {
   const isAdminRoute = pathname.startsWith('/admin');
 
   useEffect(() => {
+     window.scrollTo(0, 0);
     const checkLoggedIn = async () => {
       let token = localStorage.getItem("auth-token");
       if (token === null) {
@@ -73,7 +81,7 @@ function App() {
     };
 
     checkLoggedIn();
-  }, []);
+  }, [pathname]);
 
   return (
     <UserContext.Provider value={{ userData, setUserData }}>
@@ -89,7 +97,8 @@ function App() {
         <Route path="/blogs/:id" element={<BlogText />} />
         <Route path="/achievements" element={<Achievements />} />
         <Route path="/gallery" element={<Gallery1 />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/services" element={<Service/>} />
+        <Route path="/service/:id" element={<ServiceInfo />} />
         <Route path="/admin" element={<Index />} />
         <Route path="/admin/blogs" element={<BlogView />} />
         <Route path="/admin/login" element={<Login />} />
@@ -101,6 +110,10 @@ function App() {
 
         <Route path="/admin/image" element={<GalleryView />} />
         <Route path="/admin/addimage" element={<AddGallery />} />
+        <Route path="/admin/appointment" exact element={<AppointmentView/> }  />
+      <Route path="/admin/message" exact element={<MessageView/> }  />
+      <Route path="/admin/addservice" exact element={<AddService /> }  />
+      <Route path="/admin/service" exact element={<ServiceView /> }  />
 
       </Routes>
       {!isAdminRoute && <Footer />}

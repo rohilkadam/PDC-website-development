@@ -22,6 +22,9 @@ app.use('/api/blogs',require('./routes/blog'))
 app.use('/api/award',require('./routes/award'))
 app.use('/api/testimonial',require('./routes/testimonial'))
 app.use('/api/gallery',require('./routes/gallery'))
+app.use('/api/appointment',require('./routes/appointment'))
+app.use('/api/message',require('./routes/message'))
+app.use('/api/service',require('./routes/service'))
 
 
 

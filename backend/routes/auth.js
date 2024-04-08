@@ -26,6 +26,7 @@ router.post('/login',
     const { email, password } = req.body;
     try {
       let user = await User.findOne({ email: email });
+      //console.log(user);
       if (!user) {
         success = false;
         return res.status(400).json({ success, error: "Wrong Credentials" });
@@ -34,7 +35,7 @@ router.post('/login',
       const passwordCompare = await bcrypt.compare(password, user.password);
       if (!passwordCompare) {
         success = false;
-        return res.status(400).json({ success, error: "Wrong credentials" });
+        return res.status(400).json({ success, error: "Wrong credentials password" });
       }
 
       const data = {

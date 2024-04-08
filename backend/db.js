@@ -1,10 +1,14 @@
-const mongoose = require('mongoose')
-const mongoURI = "mongodb://0.0.0.0:27017/pdc"
+const mongoose = require('mongoose');
+const mongoURI = "mongodb+srv://kolhem10:HMAtpAEOmImNkqg1@pdc.zm6yrwh.mongodb.net/";
 
-const connectToMongo = () => {
-    mongoose.connect(mongoURI);
-}
+const connectToMongo = async () => {
+    try {
+        await mongoose.connect(mongoURI);
+        console.log("Connected to MongoDB");
 
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+    }
+};
 
-
-module.exports = connectToMongo
+module.exports = connectToMongo;

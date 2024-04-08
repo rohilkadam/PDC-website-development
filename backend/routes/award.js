@@ -24,6 +24,7 @@ router.post('/addaward',fetchuser, upload.single("image"), [
     body('description', 'Description must be atleast 5 characters').isLength({ min: 5 }),
 ], async (req, res) => {
         try {
+            console.log(req.body);
             const result = await cloudinary.uploader.upload(req.file.path);
             const image = result.secure_url;
             const { name, issuedBy, description } = req.body;
@@ -36,6 +37,7 @@ router.post('/addaward',fetchuser, upload.single("image"), [
             const newAward = new Award({
                 name,issuedBy, description, image
             })
+            console.log(newAward);
             const savedAward = await newAward.save();
 
             res.json(savedAward);

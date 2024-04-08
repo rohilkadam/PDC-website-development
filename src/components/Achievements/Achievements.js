@@ -16,15 +16,17 @@ const Achievements = () => {
 
   useEffect(() => {
     fetchawards();
+    //console.log(awardData);
   }, []);
   return (
     <>
     <div className='body'>
      <div className='container row m-auto mt-5'>
+      {console.log("data"+ awardData)}
      {awardData.map((index,i)=>(
                            
                                 <div class=" col-md-4 card card-award my-3" key={i}>
-                                    <img class="card-img rounded-0" src={index.img} alt="" />
+                                    <img class="card-img rounded-0" src={index.image} alt="" />
                                     <div class="card-award__body text-center">
                                         <h3>{index.name}</h3>
                                         <p>{index.by}</p>
