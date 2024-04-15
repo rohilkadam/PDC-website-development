@@ -10,7 +10,10 @@
     text-align: center;
     color: black;
   }
-  
+  #c1
+  {
+    right: 0;
+  }
   .about .our-story {
     padding: 30px;
     background-color: #ebf0f4;

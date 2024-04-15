@@ -43,7 +43,7 @@ const Login = (props) => {
                             <div className="login-wrap p-4 p-md-5">
                                 <div className="d-flex">
                                     <div className="w-100 fw-bolder text-center">
-                                        <h3 className="mb-4 text-danger">Log-In To PDC Admin</h3>
+                                        <h3 className="mb-4 text-danger">Log-In To Poona Diabetes Centre <br/> Admin Panel</h3>
                                     </div>
                                 </div>
                                 <form className="signin-form" onSubmit={handleSubmit}>
@@ -69,7 +69,7 @@ const Login = (props) => {
                     </div>
                     <div className='col-lg-6'>
                     <div className="img text-center" >
-                        <img src='https://img.freepik.com/free-vector/doctors-concept-illustration_114360-1515.jpg' className='img-fluid  my-auto' />
+                        <img src='/images/slider2.jpg' className='img-f' />
                             </div>
                     </div>
                 </div>

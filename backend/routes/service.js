@@ -3,6 +3,8 @@ const Service = require('../models/ServiceSchema');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const fetchuser = require('../middleware/fetchuser');
+const cloudinary = require("../utils/cloudinary");
+const upload = require("../utils/multer");
 
 // ROUTE 1: Get All the Blogs using: GET "/api/blogs/fetchallblogs". Login required
 router.get('/fetchallservices',async (req,res)=>{
@@ -28,12 +30,14 @@ router.get('/fetchservice/:id', async (req, res) => {
 });
 // ROUTE 2: Add a new Blog using: POST "/api/blog/addblog". Login required
 
-router.post('/addservice', fetchuser, [
-    body('name', 'Enter a valid title').isLength({ min: 3 }),
+router.post('/addservice', fetchuser,upload.single("image"), [
+    body('name', 'Enter a valid name').isLength({ min: 3 }),
     body('description', 'Description must be atleast 5 characters').isLength({ min: 5 }),
 ], async (req, res) => {
         try {
-            const { name, description, image } = req.body;
+            const result = await cloudinary.uploader.upload(req.file.path);
+            const image = result.secure_url;
+            const { name, description } = req.body;
 
             // If there are errors, return Bad request and the errors
             const errors = validationResult(req);
@@ -83,16 +87,15 @@ router.put('/updateservice/:id', fetchuser, async (req, res) => {
 
 
 // ROUTE 4: Delete an existing blog using: DELETE "/api/notes/deleteblog". Login required
-router.delete('/deleteservice/:id' ,async (req,res)=>{
+router.delete('/deleteservice/:id',fetchuser,async (req,res)=>{
     try {
         // Find the note to be delete and delete it
         let service = await Service.findById(req.params.id);
         if (!service) { return res.status(404).send("Not Found") }
 
-        // Allow deletion only if user owns this Note
-        
+
         service = await Service.findByIdAndDelete(req.params.id)
-        res.json({ "Success": "Note has been deleted", service: service });
+        res.json({ "Success": "Blog has been deleted", service: service });
 
     } catch (error) {
         console.error(error.message);

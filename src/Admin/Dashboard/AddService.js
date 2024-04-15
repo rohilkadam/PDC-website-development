@@ -10,21 +10,42 @@ const AddService = () => {
 
     const handleClick = async (e) => {
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/api/service/addservice`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
-            },
-            body: JSON.stringify(service)
-        })
-        const res = await response.json();
-        setservice({ name: "", description: "", image: "" });
-        navigate('/admin/service')
+        
+        // Create FormData object
+        const formData = new FormData();
+        formData.append('name', service.name);
+        formData.append('description', service.description);
+        formData.append('image', service.image); // Append the file
+    
+        try {
+            const response = await fetch(`http://localhost:5000/api/service/addservice`, {
+                method: 'POST',
+                headers: {
+                    'auth-token': localStorage.getItem('token')
+                },
+                body: formData // Use FormData as the body
+            });
+            const res = await response.json();
+            setservice({ name: "", description: "", image: "" });
+            navigate('/admin/service');
+        } catch (error) {
+            console.error("Error adding service:", error);
+            // Handle error
+        }
     }
+    
     const onChange = (e) => {
-        setservice({ ...service, [e.target.name]: e.target.value });
+        if (e.target.name === 'image') {
+            // Get the selected file
+            const file = e.target.files[0];
+            // Update the blog state with the selected file
+            setservice({ ...service, [e.target.name]: file });
+        } else {
+            // For other input fields, update the blog state with the input value
+            setservice({ ...service, [e.target.name]: e.target.value });
+        }
     }
+    
 
     return (
         <>
@@ -38,12 +59,12 @@ const AddService = () => {
                         <input type="text" name="name" className="form-control" placeholder="name" required onChange={onChange} value={service.name} />
                     </div>
                     <div className="form-group mb-3">
-                        <label className="label" for="description">Description</label>
+                        <label className="label" for="password">Description</label>
                         <input type="text" name="description" value={service.description} className="form-control" placeholder="Description" required onChange={onChange} />
                     </div>
                     <div className="form-group mb-3">
-                        <label className="label" for="image">Image</label>
-                        <input type="text" name="image" value={service.image} className="form-control" placeholder="image" required onChange={onChange} />
+                        <label className="label" for="password">Image</label>
+                        <input type="file" name="image"  className="form-control" placeholder="image" required onChange={onChange} />
                     </div>
 
                 </form>

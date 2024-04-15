@@ -15,7 +15,7 @@ const Home = () => {
     <Why_us />
     <About />
     <Counts />
-    <Services />
+    <Services/>
     <Testimonials />
     <Awards />
     </>

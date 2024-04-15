@@ -44,7 +44,7 @@ function ServiceInfo() {
                 {serviceData && serviceData.name && (
                   <div>
                     <h3 className="card-title">{serviceData.name}</h3>
-                    <img src={"https://img.freepik.com/premium-photo/3d-rendering-medical-ventilator-machine-hospital_493806-557.jpg?w=740"} alt="" className="card-img-top" />
+                    <img src={serviceData.image} alt="" className="card-img-top" />
                     <p className="card-text">{serviceData.description  }</p>
                   </div>
                 )}

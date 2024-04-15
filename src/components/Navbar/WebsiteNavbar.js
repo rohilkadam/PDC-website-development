@@ -2,7 +2,7 @@ import React, { Fragment, useEffect, useState } from "react";
 import "./Navbar.css";
 import navbarItems from "../Data/NavbarItems";
 import { Link, useLocation } from 'react-router-dom';
-import { FaBars, FaEnvelope, FaFacebook, FaInstagram, FaPhone, FaTwitter } from "react-icons/fa";
+import { FaBars, FaEnvelope, FaFacebook, FaInstagram, FaPhone, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { FaXmark } from "react-icons/fa6";
 
 const WebsiteNavbar = () => {
@@ -44,13 +44,14 @@ const WebsiteNavbar = () => {
       <div id="topbar" className={` ${scrolled ? "topbar-scrolled" : ""} fixed-top`}>
         <div className="container d-flex justify-content-between p-2">
           <div className="contact-info d-flex align-items-center">
-            <FaEnvelope /> <Link href="mailto:pdc@gmail.com">pdc@gmail.com</Link>
-            <FaPhone /> <Link>+1 5589 55488 55</Link>
+            <FaEnvelope /> <Link to="mailto:poonadiabetescentre@gmail.com">poonadiabetescentre@gmail.com</Link>
+            <FaPhone /> <Link> +91 9860438251 / +91 9112266110 / 020 26333754 / 020 26330511</Link>
           </div>
           <div className="d-none d-lg-flex social-links align-items-center">
-            <Link href="#" className="twitter"><FaTwitter /></Link>
-            <Link href="#" className="facebook"><FaFacebook /></Link>
-            <Link href="#" className="instagram"><FaInstagram /></Link>
+            <Link to="https://www.linkedin.com/company/poona-diabetes-centre" className="linkedin"><FaLinkedin /></Link>
+            <Link to="https://www.facebook.com/p/Poona-Diabetes-Centre-100066953806532/" className="facebook"><FaFacebook /></Link>
+            <Link to="https://instagram.com/poonadiabetescentre" className="instagram"><FaInstagram /></Link>
+            
           </div>
         </div>
         {/* Logo and Center Name */}
@@ -59,11 +60,18 @@ const WebsiteNavbar = () => {
             <img src="images/logo.png" alt="Poona Diabetic Centre Logo" className="img-fluid" />
           </div>
           <div className="col-md-6 col-sm-12 row-flex fw-bold">
-            <div class="large-font text-center pt-1 fs-1">POONA DIABETES CENTRE</div>
-            <div class="small-font text-center text-red ">NO-1 DIABETES SPECIALITY CENTRE IN PUNE | ISO 9001-2015 | ESTD. :2006</div>
+            <div className="large-font text-center pt-1 fs-1">POONA DIABETES CENTRE</div>
+            <div className="small-font text-center text-red ">NABH ACCREDITED|  ESTD. :2006 | RECOGANISED BY JOSLIN DIABETES CENTRE| CERTIFIED BY ENDOCRINE SOCIETY, USA |
+            <br></br>
+            NO-1 DIABETES CENTRE IN PUNE- TIMES HEALTH SURVEY 2016 | ISO 9001-2015 |
+            </div>
           </div>
           <div className="col-md-3 col-sm-12 text-start">
             <img src="images/logo1.jpg" alt="NBA accrediation logo" className="img-fluid" />
+            <img src="images/endocrine_usa.jpg" alt="NBA accrediation logo" className="img-fluid" />
+            <img src="images/joslin1.jpg" alt="NBA accrediation logo" className="img-fluid" />
+            <img src="images/logo4_idf.png" alt="NBA accrediation logo" className="img-fluid" />
+            
           </div>
         </div>
       </div>
@@ -87,10 +95,13 @@ const WebsiteNavbar = () => {
               {isMobile ? <FaXmark className="close" /> : <FaBars />}
             </div>
           </nav>
-          <Link to="/appointment" className="appointment-btn scrollto ms-auto float-end">Make an Appointment</Link>
+
+          <Link to="/appointment" className="appointment-btn scrollto ms-auto float-end">Book Appointment</Link>
+          
+          {/* <Link to="./admin/login" className="admin-login" target="_blank">Admin Login</Link>
+         */}
         </div>
       </header>
-
       </div>
     </>
   );

@@ -6,7 +6,26 @@
 .logo-container{
   background: #fff;
 }
-
+/* @font-face {
+  font-family: 'Old Oak Regular';
+  src: url('c:\Users\ROHIL KADAM\OneDrive\Desktop\Old Oak.ttf');
+} */
+/* .large-font text-center pt-1 fs-1
+{
+  
+} */
+.admin-login
+{
+  color: red;
+  font-weight: bold;
+  position: fixed;
+  right: 45px;
+  padding: 7px;
+  background-color: white;
+  border-radius: 18px;
+  width:130px;
+  text-align: center;
+}
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
@@ -265,6 +284,7 @@
   display: none;
   line-height: 0;
   transition: 0.5s;
+
 }
 
 .mobile-nav-toggle .close {

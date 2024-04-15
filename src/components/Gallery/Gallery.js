@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PhotoAlbum from "react-photo-album";
+// import PhotoAlbum from "react-photo-album";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Fullscreen from "yet-another-react-lightbox/plugins/fullscreen";
@@ -26,8 +26,8 @@ export default function Gallery1() {
                 <button className={`px-4 py-2 rounded-lg focus:outline-none ${activeTab === 'camp' ? 'bg-red-500 text-red' : 'bg-gray-200 text-red-700'}`} onClick={() => setActiveTab('camp')}>Camps</button>
             </div>
 
-            {/* Photo gallery */}
-            <PhotoAlbum photos={filteredPhotos} layout="masonry" onClick={({ index }) => setIndex(index)} />
+            {/* Photo gallery
+            <PhotoAlbum photos={filteredPhotos} layout="masonry" onClick={({ index }) => setIndex(index)} /> */}
 
             {/* Lightbox */}
             <Lightbox

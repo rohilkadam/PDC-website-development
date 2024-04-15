@@ -10,11 +10,8 @@ const Services = () => {
 
         <div class="section-title">
           <h2>Our Services</h2>
-          <p>Ea vitae aspernatur deserunt voluptatem impedit deserunt magnam occaecati dssumenda quas ut ad dolores adipisci aliquam.</p>
-        </div>
-
+          </div>
         <div class="row gy-5">
-
           {ServicesData.map((index,i)=>(
                 <div class="col-xl-4 col-md-6" data-aos="zoom-in" data-aos-delay="200" key={i}>
                 <div class="service-item">

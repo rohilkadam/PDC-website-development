@@ -85,8 +85,9 @@ const AdminNavbar = () => {
         </Link>
         <Link
            to="/admin/message"
-           class="list-group-item list-group-item-action py-3 ripple "
-           >
+           class="list-group-item list-group-item-action py-3 ripple ">
+
+           
            <MdMessage />
             <span>Messages</span>
         </Link>

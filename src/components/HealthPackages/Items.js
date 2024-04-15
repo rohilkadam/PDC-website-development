@@ -9,6 +9,7 @@ const Items = ({ items }) => {
   return (
     <div className="container mt-2">
       <div className="row">
+        
         {Array.from({ length: 2 }, (_, columnIndex) => (
           <div key={columnIndex} className="col-md-6">
             <ul className="list-group">
@@ -27,8 +28,4 @@ const Items = ({ items }) => {
     </div>
   );
 };
-
-
-
 export default Items;
-

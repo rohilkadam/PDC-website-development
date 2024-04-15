@@ -12,8 +12,8 @@ const Accordian = () => {
                         {HealthPackageData.map((i, index) => (
                             <div class="accordion-item" key={index}>
                                 <h2 class="accordion-header my-2" id={`heading${index}`}>
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="false" aria-controls={`collapse${index}`}>
-                                        {i.name}
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="false" aria-controls={`collapse${index}`} onclick="toggleAccordion(this)">
+                                {i.name} 
                                     </button>
                                 </h2>
                                 <div id={`collapse${index}`} class="accordion-collapse collapse my-3" aria-labelledby={`heading${index}`} data-bs-parent="#accordionExample">
@@ -38,5 +38,18 @@ const Accordian = () => {
         </>
     )
 }
-
+function toggleAccordion(button) {
+    const targetId = button.getAttribute('data-bs-target');
+    const target = document.querySelector(targetId);
+    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+    
+    if (isExpanded) {
+        target.classList.remove('show');
+        button.setAttribute('aria-expanded', 'false');
+    } else {
+        target.classList.add('show');
+        button.setAttribute('aria-expanded', 'true');
+        alert("Hi123")
+    }
+}
 export default Accordian
