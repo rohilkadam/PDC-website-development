@@ -22,7 +22,7 @@ const Banner = () => {
       <div class="carousel-inner" role="listbox">
 
         
-        <div class="carousel-item active" style={{backgroundImage: "url(images/slider1.jpg)"}}>
+        <div class="carousel-item active" style={{backgroundImage: "url(images/slider1.webp)"}}>
           <div class="container w-75">
             <h2>Welcome to <span>Poona Diabetes Centre</span></h2>
             <p>NABH Accredited Diabetes Speciality Centre in Pune, with more than 35,000 registered patients </p>
@@ -31,7 +31,7 @@ const Banner = () => {
         </div>
 
        
-        <div class="carousel-item" style={{backgroundImage: "url(images/slider2.jpg)"}}>
+        <div class="carousel-item" style={{backgroundImage: "url(images/slider2.webp)"}}>
           <div class="container w-75">
             <h2>Total Diabetes Care under One roof </h2>
             <p>We excel in delivering comprehensive and meticulously structured care for individuals with diabetes. Our approach encompasses a holistic framework that addresses not only the immediate medical needs but also focuses on long-term management, lifestyle modifications, and patient education. </p>
@@ -40,7 +40,7 @@ const Banner = () => {
         </div>
 
         
-        <div class="carousel-item" style={{backgroundImage: "url(images/slider3.jpg)"}}>
+        <div class="carousel-item" style={{backgroundImage: "url(images/slider3.webp)"}}>
           <div class="container w-75">
             <h2>Felicitation by Health Minister of Maharashtra</h2>
             <p>Founder and Director of Poona Diabetes Centre Dr. Yogesh Kadam honoured and felicitated by the then Health Minister of Maharashtra, Hon. Mr. Rajesh Tope </p>
@@ -48,7 +48,7 @@ const Banner = () => {
           </div>
         </div>
 
-          <div class="carousel-item" style={{backgroundImage: "url(images/aboutus1.jpeg)"}}>
+          <div class="carousel-item" style={{backgroundImage: "url(images/slider4th.webp)"}}>
           <div class="container w-75">
             <h2>Achieved accreditation by NABH </h2>
             <p>We are the sole diabetes speciality centre in whole of India to have been accredited by National Accreditation Board for Hospitals and Healthcare Providers(NABH) </p>
@@ -56,7 +56,7 @@ const Banner = () => {
           </div>
           </div>
 
-          <div class="carousel-item" style={{backgroundImage: "url(images/slider5th.jpg)"}}>
+          <div class="carousel-item" style={{backgroundImage: "url(images/slider5th.webp)"}}>
           <div class="container w-75">
             <h2> Our Goal </h2>
             <p>Our primary goal is to fight together against diabetes while providing comprehensive care and support to enhance the well-being of our patients.</p>

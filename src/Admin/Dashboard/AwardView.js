@@ -14,7 +14,7 @@ const AwardView = () => {
 
   async function fetchawards() {
     const res = await axios.get(
-      `http://localhost:5000/api/award/fetchallawards`,
+      `https://pdc-backend-mg9n.onrender.com/api/award/fetchallawards`,
       {
         headers: { "auth-token": userData.token },
       }
@@ -30,7 +30,7 @@ const AwardView = () => {
  
 
   const deleteNote = async (id) => {
-    const response = await fetch(`http://localhost:5000/api/award/deleteaward/${id}`, {
+    const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/award/deleteaward/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

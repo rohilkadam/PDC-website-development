@@ -14,7 +14,7 @@ const GalleryView = () => {
 
   async function fetchimages() {
     const res = await axios.get(
-      `http://localhost:5000/api/gallery/fetchallimages`,
+      `https://pdc-backend-mg9n.onrender.com/api/gallery/fetchallimages`,
       {
         headers: { "auth-token": userData.token },
       }
@@ -30,7 +30,7 @@ const GalleryView = () => {
   //console.log(images);
 
   const deleteImage = async (id) => {
-    const response = await fetch(`http://localhost:5000/api/gallery/deleteGallery/${id}`, {
+    const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/gallery/deleteGallery/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

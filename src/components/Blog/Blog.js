@@ -10,7 +10,7 @@ function Blog() {
 
   async function fetchblogs() {
     const res = await axios.get(
-      `http://localhost:5000/api/blogs/fetchallblogs`
+      `https://pdc-backend-mg9n.onrender.com/api/blogs/fetchallblogs`
     );
     
     setblogData(res.data);
@@ -38,7 +38,7 @@ function Blog() {
             <h5 className="card-title ">{post.title}</h5>
             <span><button className="btn btn-danger btn-sm">Poona Diabetes Center</button> <button className="right-btn btn btn-dark   btn-sm">12th Feb 2024</button> </span>
             
-            <Link to={`/blogs/${post._id}`} className="btn btn-outline-primary">Read More</Link>
+            <button className="btn btn-outline-primary">Read More</button>
             </div>
           </div>
         ))}

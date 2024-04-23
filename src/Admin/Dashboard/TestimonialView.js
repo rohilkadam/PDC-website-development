@@ -14,7 +14,7 @@ const TestimonialView = () => {
 
   async function fetchtestimonials() {
     const res = await axios.get(
-      `http://localhost:5000/api/testimonial/fetchalltestimonials`,
+      `https://pdc-backend-mg9n.onrender.com/api/testimonial/fetchalltestimonials`,
       {
         headers: { "auth-token": userData.token },
       }
@@ -30,7 +30,7 @@ const TestimonialView = () => {
  
 
   const deleteNote = async (id) => {
-    const response = await fetch(`http://localhost:5000/api/testimonial/deletetestimonial/${id}`, {
+    const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/testimonial/deletetestimonial/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

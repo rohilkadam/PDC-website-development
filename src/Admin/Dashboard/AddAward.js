@@ -20,7 +20,7 @@ const AddAward = () => {
         //console.log(formData);
 
         try {
-            const response = await fetch(`http://localhost:5000/api/award/addaward`, {
+            const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/award/addaward`, {
                 method: 'POST',
                 headers: {
                     'auth-token': localStorage.getItem('token')

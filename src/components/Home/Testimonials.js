@@ -16,7 +16,7 @@ const Testimonials = () => {
 
   async function fetchtestimonials() {
     const res = await axios.get(
-      `http://localhost:5000/api/testimonial/fetchalltestimonials`
+      `https://pdc-backend-mg9n.onrender.com/api/testimonial/fetchalltestimonials`
     );
     
     settestimonialData(res.data);

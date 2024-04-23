@@ -12,7 +12,7 @@ const MessageView = () => {
 
   async function fetchmessages() {
     const res = await axios.get(
-      `http://localhost:5000/api/message/fetchallmessages`,
+      `https://pdc-backend-mg9n.onrender.com/api/message/fetchallmessages`,
       {
         headers: { "auth-token": userData.token },
       }
@@ -28,7 +28,7 @@ const MessageView = () => {
   //console.log(blogs);
 
   const deleteMessage = async (id) => {
-    const response = await fetch(`http://localhost:5000/api/message/deletemessage/${id}`, {
+    const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/message/deletemessage/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

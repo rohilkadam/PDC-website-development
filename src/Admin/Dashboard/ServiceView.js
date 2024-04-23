@@ -14,7 +14,7 @@ const ServiceView = () => {
 
   async function fetchservices() {
     const res = await axios.get(
-      `http://localhost:5000/api/service/fetchallservices`,
+      `https://pdc-backend-mg9n.onrender.com/api/service/fetchallservices`,
       {
         headers: { "auth-token": userData.token },
       }
@@ -30,7 +30,7 @@ const ServiceView = () => {
   //console.log(blogs);
 
   const deleteNote = async (id) => {
-    const response = await fetch(`http://localhost:5000/api/service/deleteservice/${id}`, {
+    const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/service/deleteservice/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -60,6 +60,7 @@ const ServiceView = () => {
             <th>Name</th>
             <th>Description</th>
             <th>Image</th>
+            <th>Type</th>
             <th>Edit</th>
             <th>Delete</th>
           </tr>
@@ -69,7 +70,8 @@ const ServiceView = () => {
             <tr key={index}>
               <td>{service.name}</td>
               <td>{service.description}</td>
-              <td>{service.image}</td>
+              <td><img src={service.image} className='img-fluid' /></td>
+              <td>{service.servicetype}</td>
               <td><button><FaEdit  /></button></td>
               <td><button onClick={()=>{ deleteNote(service._id)}}> <MdDelete  / > </button></td>
             </tr>

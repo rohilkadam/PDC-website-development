@@ -17,7 +17,7 @@ const AddGallery = () => {
         formData.append('image', image.image); // Append the file
     
         try {
-            const response = await fetch(`http://localhost:5000/api/gallery/addGallery`, {
+            const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/gallery/addGallery`, {
                 method: 'POST',
                 headers: {
                     'auth-token': localStorage.getItem('token')

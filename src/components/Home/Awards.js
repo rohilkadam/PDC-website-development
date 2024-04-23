@@ -11,7 +11,7 @@ const Awards = () => {
 
   async function fetchawards() {
     const res = await axios.get(
-      `http://localhost:5000/api/award/fetchallawards`
+      `https://pdc-backend-mg9n.onrender.com/api/award/fetchallawards`
     );
     
     setawardData(res.data);

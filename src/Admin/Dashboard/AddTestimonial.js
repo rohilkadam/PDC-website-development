@@ -15,7 +15,7 @@ const AddTestimonial = () => {
         formData.append('feedback', testimonial.feedback);
 
         try {
-            const response = await fetch(`http://localhost:5000/api/testimonial/addtestimonial`, {
+            const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/testimonial/addtestimonial`, {
                 method: 'POST',
                 headers: {
                     'auth-token': localStorage.getItem('token')

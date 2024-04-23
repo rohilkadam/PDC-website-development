@@ -56,17 +56,16 @@ const WebsiteNavbar = () => {
         </div>
         {/* Logo and Center Name */}
         <div className="logo-container row">
-          <div className="col-md-3 col-sm-12 text-end">
+          <div className="col-md-2 col-sm-12 text-end">
             <img src="images/logo.png" alt="Poona Diabetic Centre Logo" className="img-fluid" />
           </div>
           <div className="col-md-6 col-sm-12 row-flex fw-bold">
             <div className="large-font text-center pt-1 fs-1">POONA DIABETES CENTRE</div>
-            <div className="small-font text-center text-red ">NABH ACCREDITED|  ESTD. :2006 | RECOGANISED BY JOSLIN DIABETES CENTRE| CERTIFIED BY ENDOCRINE SOCIETY, USA |
-            <br></br>
+            <div className="small-font text-center text-red ">NABH ACCREDIATED|  ESTD. :2006 | RECOGNISED BY JOSLIN DIABETES CENTRE| CERTIFIED BY ENDOCRINE SOCIETY, USA |
             NO-1 DIABETES CENTRE IN PUNE- TIMES HEALTH SURVEY 2016 | ISO 9001-2015 |
             </div>
           </div>
-          <div className="col-md-3 col-sm-12 text-start">
+          <div className="col-md-4 col-sm-12 text-start">
             <img src="images/logo1.jpg" alt="NBA accrediation logo" className="img-fluid" />
             <img src="images/endocrine_usa.jpg" alt="NBA accrediation logo" className="img-fluid" />
             <img src="images/joslin1.jpg" alt="NBA accrediation logo" className="img-fluid" />

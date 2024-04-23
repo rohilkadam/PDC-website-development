@@ -33,7 +33,7 @@ const Why_us = () => {
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
                     <h4>Unlocking Value: Our Range of Diabetes Care Services and Beyond</h4>
-                    <p> We pride ourselves on offering a diverse array of value-added services, each tailored to meet the unique needs of our patients. In addition to comprehensive diabetes care, we provide specialized initiatives such as World Diabetes Day camps, dedicated to raising awareness and providing support to individuals living with diabetes. Furthermore, our commitment to cutting-edge healthcare extends to innovative screenings like fibroscan, enabling early detection and proactive management of various health conditions. These value-added services exemplify our dedication to delivering holistic care that goes beyond traditional medical treatments, empowering our patients to lead healthier, happier lives.</p>
+                    <p> We offer a wide range of services tailored to our patients' needs. Alongside diabetes care, we organize events like World Diabetes Day camps to support those living with diabetes. We also provide innovative screenings like fibroscan for early detection and management of health conditions. These services reflect our commitment to holistic care, empowering patients for healthier lives..</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">

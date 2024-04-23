@@ -13,7 +13,7 @@ function BlogText() {
   async function fetchblogs() {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/blogs/fetchblog/${id}` // Include the ID parameter in the API call
+        `https://pdc-backend-mg9n.onrender.com/api/blogs/fetchblog/${id}` // Include the ID parameter in the API call
       );
       
       setblogData(res.data);

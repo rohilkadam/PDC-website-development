@@ -22,7 +22,7 @@ const ContactUs = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/message/sendmessage",
+        "https://pdc-backend-mg9n.onrender.com/api/message/sendmessage",
         formData
       );
       if (response.status === 200) {
@@ -49,8 +49,8 @@ const ContactUs = () => {
         <div className="container" data-aos="fade-up" data-aos-delay="100">
           <h2>Contact Us</h2>
           <div className="row justify-content-center">
-            
-            <div className="col-lg-3 col-md-6">
+
+            <div className="col-lg-4 col-md-6">
               <div className="info-item d-flex flex-column justify-content-center align-items-center">
                 <div className="icon">
                   <BsEnvelope />
@@ -60,27 +60,30 @@ const ContactUs = () => {
                 <br></br>
               </div>
             </div>
-            <div className="col-lg-3 col-md-6">
+            <div className="col-lg-4 col-md-6">
               <div className="info-item  d-flex flex-column justify-content-center align-items-center">
                 <div className="icon">
                   <BsTelephone />
                 </div>
                 <h3>Call Us</h3>
-                <p>+91 9860438251 / +91 9112266110 <br/>020 26333754 / 020 26330511</p>
+                <p>+91 9860438251 / +91 9112266110 <br />020 26333754 / 020 26330511</p>
               </div>
             </div>
-          
 
-          <div className="col-lg-3 col-md-6 center">
+
+            <div className="col-lg-4 col-md-6 center">
               <div className="info-item  d-flex flex-column justify-content-center align-items-center">
                 <div className="icon">
                   <FaBusinessTime />
                 </div>
                 <h3>Visiting Hours</h3>
-                <div>Monday to Saturday 8:30 am to 8:30 pm <br/><p style={{ textAlign: 'center' }}>[Sunday Closed] </p></div>
+                <div>Monday to Saturday 8:30 am to 8:30 pm <br /><p style={{ textAlign: 'center' }}>[Sunday Closed] </p></div>
               </div>
             </div>
 
+          </div>
+
+          <div className="row justify-content-center mx-auto">
             <div className="col-lg-6">
               <div className="info-item  d-flex flex-column justify-content-center align-items-center">
                 <div className="icon">
@@ -95,7 +98,8 @@ const ContactUs = () => {
                 </p>
               </div>
             </div>
-            </div>
+          </div>
+
           <div className="row gy-4 mt-1">
             <div className="col-lg-6 ">
               <iframe

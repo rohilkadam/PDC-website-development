@@ -109,7 +109,7 @@ const BookAppointment = () => {
       };
       // Make a POST request to your API endpoint
       const res = await axios.post(
-        "http://localhost:5000/api/appointment/bookappointment",
+        "https://pdc-backend-mg9n.onrender.com/api/appointment/bookappointment",
         dataToSend
       );
       
@@ -155,7 +155,7 @@ const BookAppointment = () => {
   
   const fetchBookedAppointments = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/appointment/fetchallappointments");
+      const response = await axios.get("https://pdc-backend-mg9n.onrender.com/api/appointment/fetchallappointments");
       const bookedAppointmentsData = response.data; // Assuming the response contains the booked appointments data in an array format
       setBookedAppointments(bookedAppointmentsData);
     } catch (error) {

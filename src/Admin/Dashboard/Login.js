@@ -14,7 +14,7 @@ const Login = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/auth/login", {
+        const response = await fetch("https://pdc-backend-mg9n.onrender.com/api/auth/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -68,8 +68,8 @@ const Login = (props) => {
                         </div>
                     </div>
                     <div className='col-lg-6'>
-                    <div className="img text-center" >
-                        <img src='/images/slider2.jpg' className='img-f' />
+                    <div className="img text-center my-auto mt-5" >
+                        <img src='/images/slider2.webp' className='img-f' />
                             </div>
                     </div>
                 </div>

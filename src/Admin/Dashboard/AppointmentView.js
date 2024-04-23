@@ -12,7 +12,7 @@ const AppointmentView = () => {
 
   async function fetchappointments() {
     const res = await axios.get(
-      `http://localhost:5000/api/appointment/fetchallappointments`,
+      `https://pdc-backend-mg9n.onrender.com/api/appointment/fetchallappointments`,
       {
         headers: { "auth-token": userData.token },
       }
@@ -28,7 +28,7 @@ const AppointmentView = () => {
   //console.log(blogs);
 
   const deleteAppointment = async (id) => {
-    const response = await fetch(`http://localhost:5000/api/appointment/deleteappointment/${id}`, {
+    const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/appointment/deleteappointment/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

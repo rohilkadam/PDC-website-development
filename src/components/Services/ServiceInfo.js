@@ -13,7 +13,7 @@ function ServiceInfo() {
   async function fetchservices() {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/service/fetchservice/${id}` // Include the ID parameter in the API call
+        `https://pdc-backend-mg9n.onrender.com/api/service/fetchservice/${id}` // Include the ID parameter in the API call
       );
       
       setserviceData(res.data);
@@ -36,15 +36,15 @@ function ServiceInfo() {
     <>
       <div className="body">
         <div className="service-text">
-          <div className="container narrow-container">
+          <div className="container narrow-container shadow p-5 w-75">
             
               <div >
                 {/* Render the post content here */}
                 {/* For example: */}
                 {serviceData && serviceData.name && (
                   <div>
-                    <h3 className="card-title">{serviceData.name}</h3>
-                    <img src={serviceData.image} alt="" className="card-img-top" />
+                    <h3 className="card-title fw-bold mb-5">{serviceData.name}</h3>
+                    <img src={serviceData.image} alt="" className="card-img-top mb-3 shadow" />
                     <p className="card-text">{serviceData.description  }</p>
                   </div>
                 )}

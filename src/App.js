@@ -42,6 +42,7 @@ import ServiceInfo from './components/Services/ServiceInfo';
 import Service from './components/Services/Service';
 import ServiceView from './Admin/Dashboard/ServiceView';
 import AddService from './Admin/Dashboard/AddService';
+import EditBlog from './Admin/Dashboard/EditBlog';
 
 function App() {
   const [userData, setUserData] = useState({
@@ -62,7 +63,7 @@ function App() {
       }
 
       const tokenResponse = await axios.post(
-        "http://localhost:5000/api/auth/tokenIsValid",
+        "https://pdc-backend-mg9n.onrender.com/api/auth/tokenIsValid",
         null,
         { headers: { "auth-token": token } }
       );
@@ -114,6 +115,7 @@ function App() {
       <Route path="/admin/message" exact element={<MessageView/> }  />
       <Route path="/admin/addservice" exact element={<AddService /> }  />
       <Route path="/admin/service" exact element={<ServiceView /> }  />
+      <Route path="/admin/editblog/:id" element={<EditBlog />} />
 
       </Routes>
       {!isAdminRoute && <Footer />}

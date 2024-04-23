@@ -6,7 +6,7 @@ const AddBlog = () => {
     const navigate = useNavigate();
 
 
-    const [blog, setblog] = useState({ title: "", description: "", image: "" });
+    const [blog, setblog] = useState({ title: "", file: "", image: "" });
 
     const handleClick = async (e) => {
         e.preventDefault();
@@ -14,11 +14,11 @@ const AddBlog = () => {
         // Create FormData object
         const formData = new FormData();
         formData.append('title', blog.title);
-        formData.append('description', blog.description);
+        formData.append('file', blog.file);
         formData.append('image', blog.image); // Append the file
     
         try {
-            const response = await fetch(`http://localhost:5000/api/blogs/addblog`, {
+            const response = await fetch(`https://pdc-backend-mg9n.onrender.com/api/blogs/addblog`, {
                 method: 'POST',
                 headers: {
                     'auth-token': localStorage.getItem('token')
@@ -26,7 +26,7 @@ const AddBlog = () => {
                 body: formData // Use FormData as the body
             });
             const res = await response.json();
-            setblog({ title: "", description: "", image: "" });
+            setblog({ title: "", file: "", image: "" });
             navigate('/admin/blogs');
         } catch (error) {
             console.error("Error adding blog:", error);
@@ -35,7 +35,7 @@ const AddBlog = () => {
     }
     
     const onChange = (e) => {
-        if (e.target.name === 'image') {
+        if (e.target.name === 'image' || e.target.name === 'file') {
             // Get the selected file
             const file = e.target.files[0];
             // Update the blog state with the selected file
@@ -59,8 +59,8 @@ const AddBlog = () => {
                         <input type="text" name="title" className="form-control" placeholder="title" required onChange={onChange} value={blog.title} />
                     </div>
                     <div className="form-group mb-3">
-                        <label className="label" for="password">Description</label>
-                        <input type="text" name="description" value={blog.description} className="form-control" placeholder="Description" required onChange={onChange} />
+                        <label className="label" for="password">File</label>
+                        <input type="file" name="file"  className="form-control" placeholder="file" required onChange={onChange} />
                     </div>
                     <div className="form-group mb-3">
                         <label className="label" for="password">Image</label>
@@ -71,7 +71,7 @@ const AddBlog = () => {
 
                 <div className="text-center">
 
-                    <button disabled={blog.title.length < 5 || blog.description.length < 5} type="submit" className=" btn btn-danger rounded submit px-3" onClick={handleClick}>Add blog</button>
+                    <button disabled={blog.title.length < 5 } type="submit" className=" btn btn-danger rounded submit px-3" onClick={handleClick}>Add blog</button>
                 </div>
                 </div>
 
