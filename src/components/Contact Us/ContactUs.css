@@ -1,0 +1,84 @@
+
+  .container h2{
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .contact iframe{
+    border:0; 
+    width: 100%; 
+    height: 384px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+  }
+.contact .info-item {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+    padding: 20px 0 30px 0;
+    margin-bottom: 20px;
+    
+  }
+  
+  .contact .info-item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    font-size: 24px;
+    line-height: 0;
+    border-radius: 50%;
+    border: 2px dotted red;
+  }
+
+  
+  .contact .info-item h3 {
+    font-size: 20px;
+    color: #6c757d;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  
+  .contact .info-item p {
+    padding: 0px 20px;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .contact .message-form{
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+  }
+  
+  .contact .message-form .form-group {
+    padding-bottom: 20px;
+  }
+  
+  
+  
+  .contact .message-form input,
+  .contact .message-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  
+  
+  
+  .contact .message-form input {
+    height: 44px;
+  }
+  
+  .contact .message-form textarea {
+    padding: 10px 12px;
+  }
+  
+  .contact .message-form button{
+    padding: 15px 30px;
+    background-color: red;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }

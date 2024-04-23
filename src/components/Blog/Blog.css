@@ -1,0 +1,39 @@
+.blog-posts{
+    margin-top: 130px;
+}
+
+.blog-posts .card{
+    width: 16rem;
+}
+.blog-posts h2{
+    font-size: 40px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+.blog-card{
+    width: 32%;
+    margin: 15px auto ; 
+}
+.blog-post{
+    margin: 15px auto ;  
+}
+.blog-post h5{
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.blog-post img{
+    margin-bottom: 20px;
+}
+.btn{
+    margin-bottom: 10px;
+}
+.blog-post .right-btn{
+    margin-left: 70px;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-card{
+        width: 90%;
+        margin: 15px auto;
+    }
+}

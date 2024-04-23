@@ -1,0 +1,389 @@
+.logo-container img{
+  height: 94px;
+  width: 94px;
+  margin: 3px;
+}
+.logo-container{
+  background: #fff;
+}
+/* @font-face {
+  font-family: 'Old Oak Regular';
+  src: url('c:\Users\ROHIL KADAM\OneDrive\Desktop\Old Oak.ttf');
+} */
+/* .large-font text-center pt-1 fs-1
+{
+  
+} */
+.admin-login
+{
+  color: red;
+  font-weight: bold;
+  position: fixed;
+  right: 45px;
+  padding: 7px;
+  background-color: white;
+  border-radius: 18px;
+  width:130px;
+  text-align: center;
+}
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+#topbar {
+  background: red;
+  height: 135px;
+  font-size: 14px;
+  transition: all 0.5s;
+  z-index: 996;
+}
+
+#topbar.topbar-scrolled {
+  top: -135px;
+}
+
+#topbar .contact-info a {
+  line-height: 1;
+  color: #fff;
+  transition: 0.3s;
+}
+
+#topbar .contact-info a:hover {
+  color: #fff;
+}
+
+#topbar .contact-info svg {
+  color: #fff;
+  padding-right: 4px;
+  margin-left: 15px;
+  line-height: 0;
+}
+
+#topbar .contact-info svg:first-child {
+  margin-left: 0;
+}
+
+#topbar .social-links a {
+  color: #fff;
+  padding-left: 15px;
+  display: inline-block;
+  line-height: 1px;
+  transition: 0.3s;
+}
+
+#topbar .social-links a:hover {
+  color: #fff;
+}
+
+#topbar .social-links a:first-child {
+  border-left: 0;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  background: red;
+  transition: all 0.5s;
+  z-index: 997;
+  padding: 10px 0;
+  top: 135px;
+  box-shadow: 0px 2px 15px rgba(25, 119, 204, 0.1);
+}
+
+#header.header-scrolled {
+  top: 0;
+}
+
+#header .logo {
+  font-size: 30px;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+#header .logo a {
+  color: #fff;
+}
+
+#header .logo img {
+  max-height: 60px;
+  max-width: 50px;
+}
+
+/**
+* Appointment Button *
+*/
+.appointment-btn {
+  background: #fff;
+  color: red;
+  border-radius: 50px;
+  padding: 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.appointment-btn:hover {
+  background: #2c4964;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  #topbar{
+    height: 160px;
+  }
+  #topbar.topbar-scrolled{
+    top:-470px
+  }
+  #header{
+    top : -160px
+  }
+  .logo-container div{
+    text-align: center !important;
+  }
+  .appointment-btn {
+    margin: 0 15px 0 0;
+    padding: 6px 18px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/**
+* Desktop Navigation 
+*/
+.websitenavbar .navbar {
+  padding: 0;
+}
+
+.websitenavbar .navbar ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.websitenavbar .navbar li {
+  position: relative;
+}
+
+.websitenavbar .navbar>ul>li {
+  position: relative;
+  white-space: nowrap;
+  padding: 8px 0 8px 40px;
+}
+
+.websitenavbar .navbar a,
+.websitenavbar .navbar a:focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  white-space: nowrap;
+  transition: 0.3s;
+  border-bottom: 2px solid red;
+  padding: 5px 2px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.websitenavbar .navbar a i,
+.websitenavbar .navbar a:focus i {
+  font-size: 12px;
+  line-height: 0;
+  margin-left: 5px;
+}
+
+.websitenavbar .navbar a:hover,
+.websitenavbar .navbar .active,
+.websitenavbar .navbar .active:focus,
+.websitenavbar .navbar li:hover>a {
+  color: #2c4964;
+  border-color: #fff;
+}
+
+.websitenavbar .navbar .dropdown ul {
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+  transition: 0.3s;
+}
+
+.websitenavbar .navbar .dropdown ul li {
+  min-width: 200px;
+}
+
+.websitenavbar .navbar .dropdown ul a {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: none;
+  color: #082744;
+  border: none;
+}
+
+.websitenavbar .navbar .dropdown ul a i {
+  font-size: 12px;
+}
+
+.websitenavbar .navbar .dropdown ul a:hover,
+.websitenavbar .navbar .dropdown ul .active:hover,
+.websitenavbar .navbar .dropdown ul li:hover>a {
+  color: #fff;
+}
+
+.websitenavbar .navbar .dropdown:hover>ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+.websitenavbar .navbar .dropdown .dropdown ul {
+  top: 0;
+  left: calc(100% - 30px);
+  visibility: hidden;
+}
+
+.websitenavbar .navbar .dropdown .dropdown:hover>ul {
+  opacity: 1;
+  top: 0;
+  left: 100%;
+  visibility: visible;
+}
+
+@media (max-width: 1366px) {
+  .websitenavbar .navbar .dropdown .dropdown ul {
+    left: -90%;
+  }
+
+  .websitenavbar .navbar .dropdown .dropdown:hover>ul {
+    left: -100%;
+  }
+}
+
+/**
+* Mobile Navigation 
+*/
+.mobile-nav-toggle {
+  color: #2c4964;
+  cursor: pointer;
+  display: none;
+  line-height: 0;
+  transition: 0.5s;
+
+}
+
+.mobile-nav-toggle .close {
+  color: #fff;
+}
+
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+  }
+
+  .websitenavbar .navbar ul {
+    display: none;
+  }
+}
+
+.websitenavbar .navbar-mobile {
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(28, 47, 65, 0.9);
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.websitenavbar .navbar-mobile .mobile-nav-toggle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.websitenavbar .navbar-mobile ul {
+  display: block;
+  position: absolute;
+  top: 55px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  padding: 10px 0;
+  background-color: #fff;
+  overflow-y: auto;
+  transition: 0.3s;
+}
+
+.websitenavbar .navbar-mobile>ul>li {
+  padding: 0;
+}
+
+.websitenavbar .navbar-mobile a,
+.websitenavbar .navbar-mobile a:focus {
+  padding: 10px 20px;
+  font-size: 15px;
+  color: #2c4964;
+  border: none;
+}
+
+.websitenavbar .navbar-mobile a:hover,
+.websitenavbar .navbar-mobile li:hover>a {
+  color: #fff;
+}
+
+.websitenavbar .navbar-mobile .getstarted,
+.websitenavbar .navbar-mobile .getstarted:focus {
+  margin: 15px;
+}
+
+.websitenavbar .navbar-mobile .dropdown ul {
+  position: static;
+  display: none;
+  margin: 10px 20px;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 1;
+  visibility: visible;
+  background: #fff;
+  box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+}
+
+.websitenavbar .navbar-mobile .dropdown ul li {
+  min-width: 200px;
+}
+
+.websitenavbar .navbar-mobile .dropdown ul a {
+  padding: 10px 20px;
+}
+
+.websitenavbar .navbar-mobile .dropdown ul a i {
+  font-size: 12px;
+}
+
+.websitenavbar .navbar-mobile .dropdown ul a:hover,
+.websitenavbar .navbar-mobile .dropdown ul .active:hover,
+.websitenavbar .navbar-mobile .dropdown ul li:hover>a {
+  color: #fff;
+}
+
+.websitenavbar .navbar-mobile .dropdown>.dropdown-active {
+  display: block;
+}

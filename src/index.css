@@ -1,0 +1,49 @@
+:root{
+  --red :#b61a1a;
+  --dark-red :#7a1313;
+  --light-red: rgb(187, 53, 53);
+}
+.text-red{
+  color: red;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+.body{
+  margin-top: 15rem;
+}
+@media screen and (max-width: 768px) {
+  .body{
+    margin-top: 22rem;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: #444444;
+}
+
+a {
+  color: #1977cc;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #3291e6;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+}

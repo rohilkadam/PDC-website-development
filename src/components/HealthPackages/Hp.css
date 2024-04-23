@@ -1,0 +1,76 @@
+
+.box{
+    padding: 65px 0;
+    box-shadow: 3.517px -8.285px 30px 0px rgba(12, 58, 132, 0.15);
+    background: #eeeeee;
+    z-index: 11;
+    position: relative;
+    align-items: center;
+}
+.accordion .accordion-item {
+    padding: 0px !important;
+    margin-bottom: 10px;
+    border-radius: 0px;
+    border:none;
+    outline: none;
+    background: #eeeeee;
+}
+
+
+.accordion .accordion-item button {
+    padding: 15px;
+    background-color: var(--light-red);
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: capitalize;
+    display: block;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.accordion .accordion-item button:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.accordion .accordion-button {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.accordion .accordion-button::after {
+    content: "";
+    position: absolute;
+    right: 24px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 14px;
+    height: 14px;
+    border: 3px solid #fff;
+    border-right: none;
+    border-bottom: none;
+    transform: rotate(225deg);
+    transition: all .5s ease;
+}
+
+.accordion .accordion-button[aria-expanded="true"]:after {
+    transform: rotate(45deg);
+}
+
+.accordion .accordion-collapse{
+    background: #fff;
+    border-radius: 10px;
+    padding: 0 30px;
+}
+.list-group-item{
+    border: none;
+    outline: none;
+}
+.list-group-item svg{
+    color: #060236;
+}
