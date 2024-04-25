@@ -72,7 +72,11 @@ const AwardView = () => {
               <td>{award.issuedBy}</td>
               <td>{award.description}</td>
               <td>{award.image}</td>
-              <td><button ><FaEdit  /></button></td>
+              <td>
+              <Link to={`/admin/updateaward/${award._id}`}>
+                      <button className="btn btn-primary"><FaEdit /></button>
+              </Link>
+              </td>
               <td><button onClick={()=>{ deleteNote(award._id)}}> <MdDelete  / > </button></td>
             </tr>
           ))}

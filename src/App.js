@@ -30,6 +30,7 @@ import Login from './Admin/Dashboard/Login';
 import UserContext from './context/UserContext';
 import AddBlog from './Admin/Dashboard/AddBlog';
 import AwardView from './Admin/Dashboard/AwardView';
+import UpdateAward from './Admin/Dashboard/UpdateAward';
 import AddAward from './Admin/Dashboard/AddAward';
 import TestimonialView from './Admin/Dashboard/TestimonialView';
 import AddTestimonial from './Admin/Dashboard/AddTestimonial';
@@ -42,7 +43,6 @@ import ServiceInfo from './components/Services/ServiceInfo';
 import Service from './components/Services/Service';
 import ServiceView from './Admin/Dashboard/ServiceView';
 import AddService from './Admin/Dashboard/AddService';
-import EditBlog from './Admin/Dashboard/EditBlog';
 
 function App() {
   const [userData, setUserData] = useState({
@@ -68,7 +68,7 @@ function App() {
         { headers: { "auth-token": token } }
       );
       if (tokenResponse.data) {
-        const userRes = await axios.get("http://localhost:3001/api/auth/getuser", {
+        const userRes = await axios.get("https://pdc-backend-mg9n.onrender.com/api/auth/getuser", {
           headers: { "auth-token": token },
         });
         setUserData({
@@ -106,6 +106,7 @@ function App() {
         <Route path="/admin/addblog" element={<AddBlog />} />
         <Route path="/admin/award" element={<AwardView />} />
         <Route path="/admin/addaward" element={<AddAward />} />
+        <Route path="/admin/updateaward/:id" element={<UpdateAward />} />
         <Route path="/admin/testimonial" element={<TestimonialView />} />
         <Route path="/admin/addtestimonial" element={<AddTestimonial />} />
 
@@ -115,7 +116,6 @@ function App() {
       <Route path="/admin/message" exact element={<MessageView/> }  />
       <Route path="/admin/addservice" exact element={<AddService /> }  />
       <Route path="/admin/service" exact element={<ServiceView /> }  />
-      <Route path="/admin/editblog/:id" element={<EditBlog />} />
 
       </Routes>
       {!isAdminRoute && <Footer />}

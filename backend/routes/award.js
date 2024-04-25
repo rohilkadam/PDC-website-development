@@ -6,11 +6,27 @@ const fetchuser = require('../middleware/fetchuser');
 const cloudinary = require("../utils/cloudinary");
 const upload = require("../utils/multer");
 
-// ROUTE 1: Get All the Awards using: GET "/api/award/fetchallawards". Login required
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+router.use(upload.single('image'));
+
 router.get('/fetchallawards',async (req,res)=>{
     try {
         const awards = await Award.find({});
         res.json(awards);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Internal Server Error");
+    }
+});
+
+router.get('/fetchaward/:id', async (req, res) => {
+    try {
+        const award = await Award.findById(req.params.id);
+        if (!award) {
+            return res.status(404).json({ msg: 'Award not found' });
+        }
+        res.json(award);
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");
@@ -48,32 +64,49 @@ router.post('/addaward',fetchuser, upload.single("image"), [
     }
 );
 
-// ROUTE 3: Update an existing award using: PUT "/api/notes/updateaward". Login required
+
+// ROUTE: Update an existing award including image upload
 router.put('/updateaward/:id', async (req, res) => {
-    const { name,issuedBy, description, image } = req.body;
-    try {
-        // Create a newAward object
-        const newAward = {};
-        if(name){newAward.name = name};
-        if (issuedBy) { newAward.issuedBy = issuedBy };
-        if (description) { newAward.description = description };
-        if (image) { newAward.image = image };
+    const { name, issuedBy, description } = req.body;
+    let imageUrl = null;
 
-        // Find the note to be updated and update it
-        let award = await Award.findById(req.params.id);
-        if(!award){
-            return res.status(404).send("Not Found")
+    // Check if an image file was uploaded
+    if (req.file) {
+        try {
+            // Upload image to Cloudinary if a new image is uploaded
+            const result = await cloudinary.uploader.upload(req.file.path);
+            imageUrl = result.secure_url;
+        } catch (error) {
+            console.error("Error uploading image:", error);
+            return res.status(500).json({ msg: 'Error uploading image' });
         }
-        
+    }
 
-        award = await Award.findByIdAndUpdate(req.params.id,{$set:newAward},{new:true});
-        res.json(award);
+    try {
+        // Find the award to be updated
+        let award = await Award.findById(req.params.id);
+        if (!award) {
+            return res.status(404).json({ msg: 'Award not found' });
+        }
 
+        // Update award details including the image URL if a new image was uploaded
+        award.name = name;
+        award.issuedBy = issuedBy;
+        award.description = description;
+        if (imageUrl) {
+            award.image = imageUrl; // Update image URL only if a new image was uploaded
+        }
+
+        // Save updated award to the database
+        const updatedAward = await award.save();
+
+        res.json(updatedAward); // Respond with the updated award object
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Internal Server Error");
+        res.status(500).send('Internal Server Error');
     }
 });
+
 
 
 // ROUTE 4: Delete an existing award using: DELETE "/api/notes/deleteaward". Login required
