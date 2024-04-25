@@ -26,7 +26,7 @@ const Login = (props) => {
             localStorage.setItem('token', json.authToken);
             setUserData({
                 token: json.authToken,
-                user: "iojo"
+                user: "admin"
             });
             navigate('/admin');
         } else {
