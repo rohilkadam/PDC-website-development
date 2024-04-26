@@ -51,7 +51,7 @@ const GalleryView = () => {
         <Link to="/admin/addimage" className="btn btn-primary mb-3 me-5">Add Image</Link>
         </div>
      
-      <h1 className='table-heading  text-center m-2'> images </h1>
+      <h1 className='table-heading  text-center m-2'> Gallery Images </h1>
       
       <div className='container '>
       <table className="table  table-striped table-bordered ">
@@ -59,16 +59,17 @@ const GalleryView = () => {
           <tr>
             <th>Image</th>
             <th>Category</th>
-            <th>Edit</th>
+            <th>Year</th>
             <th>Delete</th>
           </tr>
         </thead>
         <tbody>
           {images.map((image, index) => (
             <tr key={index}>
-              <td>{image.image}</td>
+              <td><img src={image.image} className='mx-auto w-25 h-25'/></td>
               <td>{image.category}</td>
-              <td><button><FaEdit  /></button></td>
+              <td>{image.year}</td>
+              {/* <td><button><FaEdit  /></button></td> */}
               <td><button onClick={()=>{ deleteImage(image._id)}}> <MdDelete  / > </button></td>
             </tr>
           ))}

@@ -22,11 +22,11 @@ router.get('/fetchallimages',async (req,res)=>{
 router.post('/addGallery', fetchuser,upload.single("image"), async (req, res) => {
         try {
             const result = await cloudinary.uploader.upload(req.file.path);
-            const { category} = req.body;
+            const { category, year} = req.body;
             const image = result.secure_url;
 
             const newimage = new Gallery({
-                image, category
+                image, category, year
             })
             console.log(newimage);
             const savedGallery = await newimage.save()
@@ -41,7 +41,7 @@ router.post('/addGallery', fetchuser,upload.single("image"), async (req, res) =>
 
 // ROUTE 3: Update an existing Gallery using: PUT "/api/notes/updateGallery". Login required
 router.put('/updateGallery/:id', fetchuser, async (req, res) => {
-    const { title, description, image } = req.body;
+    const { title, year } = req.body;
     try {
         
 

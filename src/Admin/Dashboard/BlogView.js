@@ -73,11 +73,11 @@ const BlogView = () => {
                   <img src={blog.image} alt="Blog" className="img-fluid" />
                 </td>
                 <td>{new Date(blog.date).toLocaleDateString()}</td>
-                <td>
+                {/* <td>
                   <Link to={`/admin/editblog/${blog._id}`}>
                     <FaEdit />
                   </Link>
-                </td>
+                </td> */}
                 <td>
                   <button onClick={() => deleteBlog(blog._id)}>
                     <MdDelete />
