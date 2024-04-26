@@ -48,7 +48,7 @@ const Banner = () => {
           </div>
         </div>
 
-          <div class="carousel-item" style={{backgroundImage: "url(images/slider4th.png)"}}>
+          <div class="carousel-item" style={{backgroundImage: "url(images/slider4th.jpg)"}}>
           <div class="container w-75">
             <h2>Achieved accreditation by NABH </h2>
             <p>We are the sole diabetes speciality centre in whole of India to have been accredited by National Accreditation Board for Hospitals and Healthcare Providers(NABH) </p>
