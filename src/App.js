@@ -31,6 +31,7 @@ import UserContext from './context/UserContext';
 import AddBlog from './Admin/Dashboard/AddBlog';
 import AwardView from './Admin/Dashboard/AwardView';
 import UpdateAward from './Admin/Dashboard/UpdateAward';
+import UpdateTestimonial from './Admin/Dashboard/UpdateTestimonial';
 import AddAward from './Admin/Dashboard/AddAward';
 import TestimonialView from './Admin/Dashboard/TestimonialView';
 import AddTestimonial from './Admin/Dashboard/AddTestimonial';
@@ -107,6 +108,7 @@ function App() {
         <Route path="/admin/award" element={<AwardView />} />
         <Route path="/admin/addaward" element={<AddAward />} />
         <Route path="/admin/updateaward/:id" element={<UpdateAward />} />
+        <Route path="/admin/updatetestimonial/:id" element={<UpdateTestimonial />} />
         <Route path="/admin/testimonial" element={<TestimonialView />} />
         <Route path="/admin/addtestimonial" element={<AddTestimonial />} />
 

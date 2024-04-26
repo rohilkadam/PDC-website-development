@@ -6,6 +6,10 @@ const cloudinary = require("../utils/cloudinary");
 const upload = require("../utils/multer");
 
 
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+router.use(upload.single('image'));
+
 // ROUTE 1: Get All the Testimonials using: GET "/api/testimonials/fetchalltestimonials". Login required
 router.get('/fetchalltestimonials',async (req,res)=>{
     try {
@@ -48,31 +52,45 @@ router.post('/addtestimonial',upload.single("image"), [
 
 // ROUTE 3: Update an existing testimonial using: PUT "/api/notes/updatetestimonial". Login required
 router.put('/updatetestimonial/:id', async (req, res) => {
-    const { name, image, feedback } = req.body;
-    try {
-        // Create a newTestimonial object
-        const newTestimonial = {};
-        if(name){newTestimonial.name = name};
-        if (image) { newTestimonial.image = image };
-        if (feedback) { newTestimonial.feedback = feedback };
-        
+    const { name, feedback } = req.body;
+    let imageUrl = null;
 
-        // Find the note to be updated and update it
-        let testimonial = await Testimonial.findById(req.params.id);
-        if(!testimonial){
-            return res.status(404).send("Not Found")
+    // Check if an image file was uploaded
+    if (req.file) {
+        try {
+            // Upload image to Cloudinary if a new image is uploaded
+            const result = await cloudinary.uploader.upload(req.file.path);
+            imageUrl = result.secure_url;
+        } catch (error) {
+            console.error("Error uploading image:", error);
+            return res.status(500).json({ msg: 'Error uploading image' });
         }
+    }
+
+    try {
+        // Find the award to be updated
+        let testimonial = await Testimonial.findById(req.params.id);
+        if (!testimonial) {
+            return res.status(404).json({ msg: 'Testimonial not found' });
+        }
+
+        // Update award details including the image URL if a new image was uploaded
+        testimonial.name = name;
+        testimonial.feedback = feedback;
         
+        if (imageUrl) {
+            testimonial.image = imageUrl; // Update image URL only if a new image was uploaded
+        }
 
-        testimonial = await Testimonial.findByIdAndUpdate(req.params.id,{$set:newTestimonial},{new:true});
-        res.json(testimonial);
+        // Save updated award to the database
+        const updatedTestimonial = await testimonial.save();
 
+        res.json(updatedTestimonial); // Respond with the updated award object
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("Internal Server Error");
+        res.status(500).send('Internal Server Error');
     }
 });
-
 
 // ROUTE 4: Delete an existing testimonial using: DELETE "/api/notes/deletetestimonial". Login required
 router.delete('/deletetestimonial/:id',async (req,res)=>{

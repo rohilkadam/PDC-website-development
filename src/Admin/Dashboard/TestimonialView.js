@@ -70,7 +70,11 @@ const TestimonialView = () => {
               <td>{testimonial.name}</td>
               <td>{testimonial.image}</td>
               <td>{testimonial.feedback}</td>
-              <td><button><FaEdit  /></button></td>
+              <td>
+              <Link to={`/admin/updatetestimonial/${testimonial._id}`}>
+                      <button className="btn btn-primary"><FaEdit /></button>
+              </Link>
+              </td>
               <td><button onClick={()=>{ deleteNote(testimonial._id)}}> <MdDelete  / > </button></td>
             </tr>           
           ))}
