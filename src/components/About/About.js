@@ -38,7 +38,7 @@ const About = () => {
         <div className="row">
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
               <div className="card">
-              <img src="images/Vision1.webp" alt="..." />
+              <img src="images/Vision1.jpg" alt="..." />
               <div className="card-icon">
               <AiOutlineAim />
               </div>
@@ -51,7 +51,7 @@ const About = () => {
           </div>
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
               <div className="card">
-              <img src="images/ourplan.webp" className="card-img-top" alt="..." />
+              <img src="images/ourplan1.jpg" className="card-img-top" alt="..." />
               <div className="card-icon">
               <CiCalendarDate />
               </div>
@@ -63,7 +63,7 @@ const About = () => {
           </div> 
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300" id='c1'>
               <div className="card"  >
-              <img src="images/ourmission.JPG" alt="..." />
+              <img src="images/ourmission.jpg" alt="..." />
               <div className="card-icon">
               <FaBullseye />
               </div>
