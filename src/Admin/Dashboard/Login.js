@@ -69,7 +69,7 @@ const Login = (props) => {
                     </div>
                     <div className='col-lg-6'>
                     <div className="img text-center my-auto mt-5" >
-                        <img src='/images/slider2.webp' className='img-f' />
+                        <img src='/images/slider1.webp' className='img-f' />
                             </div>
                     </div>
                 </div>
