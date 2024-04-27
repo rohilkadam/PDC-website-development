@@ -38,7 +38,9 @@ function Blog() {
             <h5 className="card-title ">{post.title}</h5>
             <span><button className="btn btn-danger btn-sm">Poona Diabetes Center</button> <button className="right-btn btn btn-dark   btn-sm">12th Feb 2024</button> </span>
             
-            <button className="btn btn-outline-primary">Read More</button>
+            <a href={post.file} target="_blank" rel="noopener noreferrer" className='btn btn-outline-primary'>
+                    Download
+                  </a>
             </div>
           </div>
         ))}

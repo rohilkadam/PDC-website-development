@@ -7,7 +7,7 @@ const BlogSchema = new Schema({
         type:String,
         required:true
     },
-    description:{
+    file:{
         type:String,
         required:true
     },

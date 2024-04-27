@@ -37,7 +37,7 @@ router.post('/addservice', fetchuser,upload.single("image"), [
         try {
             const result = await cloudinary.uploader.upload(req.file.path);
             const image = result.secure_url;
-            const { name, description } = req.body;
+            const { name, description, servicetype } = req.body;
 
             // If there are errors, return Bad request and the errors
             const errors = validationResult(req);
@@ -45,7 +45,7 @@ router.post('/addservice', fetchuser,upload.single("image"), [
                 return res.status(400).json({ errors: errors.array() });
             }
             const newService = new Service({
-                name, description, image
+                name, description, image, servicetype
             })
             const savedService = await newService.save()
 
