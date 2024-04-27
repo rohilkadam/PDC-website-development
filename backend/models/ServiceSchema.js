@@ -14,6 +14,10 @@ const ServiceSchema = new Schema({
     image:{
         type:String,
         required:true
+    },
+    servicetype:{
+        type:String,
+        required:true
     }
 }); 
 
