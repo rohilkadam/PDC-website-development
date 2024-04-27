@@ -80,7 +80,7 @@ router.put('/updatetestimonial/:id', async (req, res) => {
         
         if (imageUrl) {
             testimonial.image = imageUrl; // Update image URL only if a new image was uploaded
-        }
+        }   
 
         // Save updated award to the database
         const updatedTestimonial = await testimonial.save();
