@@ -61,7 +61,7 @@ const WebsiteNavbar = () => {
           </div>
           <div className="col-md-6 col-sm-12 row-flex fw-bold">
             <div className="large-font text-center pt-1 fs-1">POONA DIABETES CENTRE</div>
-            <div className="small-font text-center text-red ">NABH ACCREDIATED|  ESTD. :2006 | RECOGNISED BY JOSLIN DIABETES CENTRE| CERTIFIED BY ENDOCRINE SOCIETY, USA |
+            <div className="small-font text-center text-red ">NABH ACCREDIATED|  ESTD. :2006 | RECOGNIZED BY JOSLIN DIABETES CENTRE| CERTIFIED BY ENDOCRINE SOCIETY, USA |
             NO-1 DIABETES CENTRE IN PUNE- TIMES HEALTH SURVEY 2016 | ISO 9001-2015 |
             </div>
           </div>

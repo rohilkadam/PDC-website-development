@@ -17,7 +17,7 @@ const About = () => {
             <div className="our-story">
               <h4>Est 2006</h4>
               <h3>Our Story</h3>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint molestiae, dolorem enim nostrum ducimus debitis pariatur adipisci magnam numquam incidunt laboriosam molestias aperiam consectetur quis iusto, ratione perferendis dolorum totam quia provident illum corrupti neque nobis! Reiciendis sequi enim, voluptates in laudantium illo mollitia tempora ducimus repellat possimus sit! Id repellat accusantium exercitationem inventore! Ut at vero quidem voluptates error aspernatur ducimus alias qui, quaerat voluptate similique tempora, facere tempore?</p>
+              <p>Since its inception in 2006, our Diabetes Centre has been dedicated to providing comprehensive care for individuals living with diabetes. With the aim of offering all-encompassing diabetes care under one roof, we have various departments, including Dietetics, Diabetes Education, Basic Composite Laboratory, and Foot Testing. Our wide array of services encompasses diet advice, foot care, eye care, structured diabetes care, ECG and CGMS monitoring, and a fully stocked pharmacy for our patients' convenience. Additionally, we pride ourselves on offering value-added services such as Fibro-scan camps, Bone Mineral Density (BMD) camps, and initiatives to mark World Diabetes Day. With an extensive range of lab tests available, including HbA1c, liver profile, bone profile, kidney function tests, and lipid profile, we ensure comprehensive health monitoring for our patients. With over 35,000 registered patients and counting, we have become a trusted destination for diabetes care in our community. We also offer internship opportunities in departments such as dietetics, clinical research, and medical laboratory, fostering education and professional growth. Our dedicated staff of 20-25 individuals works tirelessly to uphold our commitment to excellence. As the only NABH accredited Diabetes Centre in India, we are proud to set the standard for quality care and innovation in diabetes management.</p>
               <div className="watch-video d-flex align-items-center position-relative">
                 <i className="bi bi-play-circle"></i>
                 {/* <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" >Watch Video</a> */}
@@ -25,7 +25,7 @@ const About = () => {
             </div>
           </div>
           
-          <img src="images/aboutus1.jpeg" className="col-lg-6" alt="" />
+          <img src="images/aboutus1.jpeg" className="col-lg-6 our-story-img" alt="" />
           
           
         </div>

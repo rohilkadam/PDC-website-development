@@ -50,9 +50,13 @@
     color: rgb(186, 27, 27);
   }
   
-  .about .about-img {
+  /* .about .about-img {
     background-size: cover;
     background-position: center;
+  } */
+
+  .our-story-img{
+    height: 500px;
   }
   
  
