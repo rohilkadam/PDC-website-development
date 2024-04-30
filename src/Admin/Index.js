@@ -1,23 +1,18 @@
-import React,{useEffect,useContext} from 'react'
-import Home from './Dashboard/Home'
-import Login from './Dashboard/Login'
-import { Navigate, useNavigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import Login from './Dashboard/Login';
 import UserContext from '../context/UserContext';
 import { Link } from 'react-router-dom';
-
+import './admin.css'; 
 
 const Index = () => {
   const { userData } = useContext(UserContext);
-  console.log(userData);
   const isUserLoggedIn = userData.token !== undefined;
-  
 
   return (
-   <>
-    <div>
-      {isUserLoggedIn  ? (
+    <div className="index-container">
+      {isUserLoggedIn ? (
         <>
-          <h1>hi</h1>
+          <img src="images/slider1.jpg" alt="..." className="index-image" /> 
         </>
       ) : (
         <>
@@ -25,8 +20,7 @@ const Index = () => {
         </>
       )}
     </div>
-   </>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;

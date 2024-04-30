@@ -43,8 +43,8 @@ const Footer = () => {
                 </ul>
               </div>
 
-              <div className="col-lg-3 col-md-6 footer-links">
-                <h4>Our Services</h4>
+              <div className="col-lg-3 col-md-6 footer-links link2">
+                
                 <ul>
                   <li><FaAngleRight /> <Link to="./healthPackages">Health Packages</Link></li>
                   <li><FaAngleRight /> <Link to="./gallery">Gallery</Link></li>
