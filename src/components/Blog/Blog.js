@@ -36,7 +36,7 @@ function Blog() {
             <img src={post.image} alt="" className="card-img-top"/>
             <div className="card-body">
             <h5 className="card-title ">{post.title}</h5>
-            <span><button className="btn btn-danger btn-sm">Poona Diabetes Center</button> <button className="right-btn btn btn-dark   btn-sm">12th Feb 2024</button> </span>
+            <span><button className="btn btn-danger btn-sm">Poona Diabetes Center</button>  </span>
             
             <a href={post.file} target="_blank" rel="noopener noreferrer" className='btn btn-outline-primary'>
                     Download

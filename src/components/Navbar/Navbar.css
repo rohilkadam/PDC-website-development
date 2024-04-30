@@ -149,6 +149,19 @@
     margin: 0 15px 0 0;
     padding: 6px 18px;
   }
+  .logo-container img{
+    height: 28px;
+    width: 28px;
+  }
+  .large-font{
+    font-size: 14px !important;
+  }
+  .small-font{
+    font-size: 8px;
+  }
+  .contact-info{
+    font-size: 8px !important;
+  }
 }
 
 /*--------------------------------------------------------------
